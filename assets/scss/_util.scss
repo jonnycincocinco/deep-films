@@ -1,0 +1,107 @@
+//  ## COMMON  ----------------------------------------------------------------------//
+
+.overlay--open {
+    overflow-y: hidden;
+}
+
+.background-fillimage {
+    background-size: cover;
+    background-position: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.disabled {
+    opacity: .5;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+  text-align: center;
+  @include breakpoint(tablet) {
+    text-align: left;
+  }
+}
+
+.text-align-right {
+  text-align: center;
+  @include breakpoint(tablet) {
+    text-align: right;
+  }
+}
+
+.vertical-align {
+    top: 50%;
+    @include transform(translateY(-50%));
+}
+
+.hide-text {
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.show--ondesktop {
+  display: none;
+  @include breakpoint(desktop) {
+    display: inline-block;
+  }
+}
+
+.show--ontablet {
+  display: none;
+  @include breakpoint(tablet) {
+    display: inline-block;
+  }
+}
+
+.hide--onmobile {
+    display: none !important;
+
+    @include breakpoint(tablet) {
+        display: inline-block !important;
+    }
+}
+
+.hide--ontablet {
+    @include breakpoint(tablet) {
+        display: none !important;
+    }
+}
+
+.hide--ondesktop {
+    @include breakpoint(desktop) {
+        display: none !important;
+    }
+}
+
+.push-below {
+  padding-bottom: calculateRem(20px);
+}
+
+.cinch {
+  @include breakpoint(tablet) {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.cinch-less {
+  @include breakpoint(tablet) {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

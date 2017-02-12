@@ -1,0 +1,193 @@
+//  ## A POTPOURRI OF SORTS /// OF MODULES  ------------------------------------------------------------------------//
+.bg-strip {
+  padding-top: calculateRem(80px);
+  padding-bottom: calculateRem(80px);
+  //background: $base--bgStripcolor url(../images/global/bg-pattern.png) 0 0;
+  background: linear-gradient(to right bottom,rgb(27, 66, 138),rgba(57, 83, 142, 0.92) 30%,#319dd8 80%,rgba(1, 198, 255, 0.76) 100%);
+}
+
+.section-strip {
+    padding-top: calculateRem(80px);
+    padding-bottom: calculateRem(80px);
+
+    &.flush-bottom {
+      padding-bottom: 0;
+    }
+
+    &.flush-top {
+      padding-top: 0;
+    }
+}
+
+.pattern-strip {
+  background: $base--bgStripcolor url(../images/global/bg-pattern.png) 0 0;
+  color: #fff;
+}
+
+.grid__item {
+  ul {
+    padding-left: calculateRem(18px);
+    text-align: left;
+    @include breakpoint(tablet) {
+    //  text-align: center;
+    }
+  }
+}
+
+.three-up-tiles {
+  background: linear-gradient(to right bottom,#1b428a,rgba(0, 0, 0, 0.82) 90%,rgba(0, 0, 0, 0.82) 100%);
+   .grid__item {
+     text-align: center;
+     margin-bottom: calculateRem(40px);
+     @include span-columns(12 of 12);
+     @include breakpoint(tablet) {
+        @include span-columns(4 of 12);
+        text-align: left;
+     }
+     @include breakpoint(tablet) {
+       margin-bottom: 0;
+     }
+     &:last-child {
+       margin-bottom: 10px;
+     }
+   }
+
+   .three-up-tiles__text {
+     color: $base--colorWhite;
+     @include font-size(15);
+     @include line-height(25);
+     margin-bottom: 12px;
+     @include breakpoint(desktop) {
+       padding-right: 15%;
+     };
+   }
+}
+
+.inner-hero {
+  &.bg-strip {
+  //  padding-top: calculateRem(40px);
+  //  padding-bottom: calculateRem(40px);
+  }
+  .inner-hero__image {
+    @include span-columns(12 of 12);
+    @include breakpoint(tablet) {
+      margin-top: calculateRem(14px);
+      text-align: center;
+     }
+     @include breakpoint(desktop) {
+       margin-top: calculateRem(64px);
+       @include span-columns(5 of 12);
+       text-align: center;
+      }
+     img {
+       width: 100%;
+         @include breakpoint(tablet) {
+           width: 60%;
+         }
+         @include breakpoint(desktop) {
+           width: 100%;
+         }
+         .earthly-dna--container & {
+           width: 47%;
+           @include breakpoint(tablet) {
+             width: 30%;
+           }
+           @include breakpoint(desktop) {
+             width: 100%;
+           }
+           @include breakpoint(cinema) {
+             width: 80%;
+           }
+         }
+     }
+  }
+  .inner-hero__text {
+    //padding-right: calculateRem(125px);
+    @include span-columns(12 of 12);
+    @include breakpoint(tablet) {
+       text-align: center;
+     }
+    @include breakpoint(desktop) {
+      padding-right: calculateRem(125px);
+         @include span-columns(7 of 12);
+       text-align: left;
+     }
+  }
+  .inner-hero__text--subhead {
+    @include font-size(26);
+    font-weight: 800;
+    margin-bottom: calculateRem(32px);
+  }
+  .inner-hero__text--main {
+    @include font-size(15);
+    @include line-height(30);
+  }
+  .container {
+    margin-top: calculateRem(70px);
+    @include breakpoint(tablet) {
+      margin-top: calculateRem(70px);
+    }
+  }
+}
+
+.inner-page-section {
+  h2 {
+//    margin-bottom: calculateRem(30px);
+  }
+  .subhead {
+//    padding: 0 0 calculateRem(25px);
+    @include font-size(18);
+    @include line-height(32);
+    .page-home & {
+      padding: 0 calculateRem(60px) 0;
+    }
+    @include breakpoint(tablet) {
+      padding: 0 calculateRem(100px);
+    }
+    .about-us--container & {
+      @include breakpoint(tablet) {
+        padding: 0 calculateRem(100px) calculateRem(40px);
+      }
+      @include breakpoint(desktop) {
+        padding: 0 calculateRem(200px) calculateRem(60px);
+      }
+    }
+
+  }
+  li {
+    @include font-size(16);
+    font-weight: 800;
+    padding-bottom: calculateRem(5px);
+    list-style-position: inherit;
+    .terms--container & {
+      font-weight: inherit;
+    }
+    @include line-height(15);
+    span {
+      @include font-size(12);
+    }
+  }
+  &.three-up-tiles {
+    p {
+      margin: 0
+    }
+    h5 {
+      margin-top: 0;
+    }
+  }
+  &.ethical-screening {
+    .subhead {
+      padding-bottom: calculateRem(40px);
+    }
+  }
+  &.fund-fees {
+    .subhead {
+      @include font-size(20);
+      a {
+        &:hover {
+          color: $base--colorWhite;
+        }
+      }
+    }
+  }
+}

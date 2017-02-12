@@ -1,0 +1,64 @@
+//  ## FAQs  ----------------------------------------------------------//
+
+.faqs {
+  .icon-text-col {
+     @include span-columns(12 of 12);
+     @include breakpoint(tablet) {
+       @include span-columns(6 of 12);
+    }
+    h3 {
+       font-weight: normal;
+    }
+  }
+  .faqs__left {
+    @include span-columns(12 of 12);
+    @include breakpoint(tablet) {
+      @include span-columns(3 of 12);
+   }
+    @include breakpoint(tablet) {
+      padding-right: calculateRem(30px);
+    }
+  }
+  .faqs__right {
+    @include span-columns(12 of 12);
+    @include breakpoint(tablet) {
+      @include span-columns(9 of 12);
+   }
+    @include breakpoint(tablet) {
+      padding-left: calculateRem(30px);
+      margin-top: calculateRem(-20px);
+    }
+  }
+}
+
+.tabs-menu {
+  margin-bottom: calculateRem(30px);
+  a {
+    display: block;
+    padding-bottom: calculateRem(10px);
+    font-weight: 800;
+  }
+}
+
+.c-nav--trigger {
+  display: block;
+  padding-bottom: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background ease .3s;
+
+  &:hover,
+  &.is-active {
+//    background: #000;
+  }
+}
+
+/* Nav specific */
+
+.tab-content--main {
+  margin-bottom: calculateRem(50px);
+}
+
+.faq-search {
+  margin-top: calculateRem(15px);
+}

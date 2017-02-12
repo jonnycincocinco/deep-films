@@ -1,0 +1,61 @@
+//  ## CTA RIBBON  ------------------------------------------------------------------------//
+.cta-ribbon {
+  background: linear-gradient(to right bottom,#1b428a,rgba(0,0,0,.82) 90%,rgba(0,0,0,.82) 100%);
+
+  &.section-strip {
+    padding-top: calculateRem(90px);
+    padding-bottom: calculateRem(90px);
+  }
+
+  h2 {
+    margin-bottom: calculateRem(10px);
+    @include font-size(44);
+    padding: 0 calculateRem(20px);
+    @include breakpoint(tablet) {
+      @include font-size(54);
+    }
+  }
+  .cta-ribbon__subhead {
+      @include font-size(28);
+      font-weight: 800;
+      margin-bottom: calculateRem(60px);
+      padding: 0 calculateRem(60px);
+      @include breakpoint(tablet) {
+        @include font-size(32);
+      }
+  }
+  input {
+    line-height: 1;
+    font-weight: 300;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    width: 70px;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    font-size: 1em;
+    color: #fff;
+    &.salary {
+      width: 145px;
+    }
+  }
+  .cta-ribbon__form {
+    @include font-size(24);
+    padding: 0 calculateRem(40px);
+    @include breakpoint(tablet) {
+      @include font-size(32);
+    }
+  }
+
+  .cta-ribbon__form--second {
+    margin-bottom: 50px;
+    margin-top: 15px;
+  }
+
+  .cta {
+    float: none;
+    margin: auto;
+  }
+}

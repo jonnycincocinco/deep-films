@@ -1,0 +1,85 @@
+//  ## HOME PAGE  ----------------------------------------------------------//
+body  {
+  &.home {
+    position: fixed;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+.page-home--hero {
+  .slide-wrapper {
+    position: relative;
+    height: 100vh;
+  }
+  .video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+    video {
+      height: auto;
+      width: auto;
+      position: fixed;
+      min-width: 100vw;
+      min-height: 100vh;
+      }
+    }
+    @include breakpoint(tablet) {
+    }
+    @include breakpoint(desktop) {
+    }
+    .img-slide {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      z-index: 200;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      min-height: 24em;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+    .slide-two {
+      background: url(https://i.vimeocdn.com/video/603934043.jpg?mw=1920&mh=1080&q=100) center center no-repeat fixed;
+    }
+    .slide-three {
+      background: url(https://i.vimeocdn.com/video/613031876.jpg?mw=1920&mh=1080&q=100) center center no-repeat fixed;
+    }
+}
+
+h2 {
+  &.subhead {
+    @extend %circular-univers-ultra;
+    @include font-size(100);
+    @include line-height(100);
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    &.subhead-bottom {
+      margin-top: calculateRem(13px);
+    }
+  }
+  &.subhead-middle {
+    @include font-size(75);
+    @include line-height(100);
+    margin-bottom: 0;
+  }
+}

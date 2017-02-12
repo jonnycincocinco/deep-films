@@ -1,0 +1,68 @@
+//  ## ABOUT US  ----------------------------------------------------------//
+
+.about-us--container {
+
+  .section-strip {
+    &.border-top {
+      padding-top: calculateRem(80px);
+      margin-top: calculateRem(50px);
+      border-top: 1px solid #ddd;
+    }
+  }
+  .icon-text {
+    border-top: 1px;
+  }
+}
+
+
+
+.about-team {
+  .title {
+    font-weight: 800;
+    @include font-size(12);
+  }
+  .icon-text-col__item {
+    .grid__item {
+      .icon-text-col__icon {
+        @include breakpoint(tablet){
+          @include span-columns(4 of 12);
+        }
+        img {
+          width: 80%;
+          height: auto;
+          margin: auto;
+        }
+        .social-icons {
+          text-align: left;
+          margin-top: 12px;
+          margin-left: 20%;
+          display: inline-block;
+          a {
+            display: inline-block;
+            width: 30%;
+            @include breakpoint(tablet) {
+              float: none;
+              width: 20%;
+            }
+            &:first-child {
+              @include breakpoint(tablet) {
+                margin-right: 12px;
+              }
+            }
+            img {
+              width: 100%;
+            }
+          }
+        }
+        &.icon_right {
+          text-align: right;
+        }
+      }
+      .icon-text-col__text {
+        @include breakpoint(tablet){
+          @include span-columns(8 of 12);
+        }
+      }
+    }
+  }
+}

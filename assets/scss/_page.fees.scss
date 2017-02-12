@@ -1,0 +1,112 @@
+//  ## FEEs  ----------------------------------------------------------//
+
+.fees__categories__inner {
+  border-right: 0;
+  margin-bottom: 3.889rem;
+  @include breakpoint(tablet) {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  };
+
+  .fees__categories__entry {
+    transition: all 120ms ease-in-out;
+    @include span-columns(12 of 12);
+    &:last-child {
+      float: right;
+    }
+    @include breakpoint(tablet) {
+      @include span-columns(5 of 12);
+      display: inline-block;
+      float: none;
+    }
+    .fees__categories__entry__inner {
+      text-align: center;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+      border: 1px #d1d5d7 solid;
+      background: #fff;
+
+      @include breakpoint(tablet) {
+        border-right: 1px #d1d5d7 solid;
+        border-top: none;
+        border-left: none;
+        border-bottom: none;
+      }
+      .fees__categories__entry__inner__top {
+        padding: calculateRem(30px) calculateRem(20px);
+      }
+      .fee-rate {
+        @include font-size(64);
+        @include line-height(72);
+      }
+      .percentage-symbol {
+        @include font-size(19);
+        position: relative;
+        right: 0;
+        top: 11px;
+        vertical-align: top;
+      }
+      .aum {
+        background-color: #f7f8f9;
+        color: #838d94;
+        @include font-size(20);
+        line-height: auto;
+        margin: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        @include breakpoint(tablet) {
+          @include font-size(16);
+        }
+        @include breakpoint(desktop) {
+          @include font-size(20);
+        }
+      }
+
+    }
+//    &:hover {
+    &.featured {
+      z-index: 2;
+      position: relative;
+      border: 2px #f1703f solid;
+      box-shadow: 0 0 0 12px #fff,0 0 0 15px #f1703f,0 0 10px 15px rgba(0,0,0,.1);
+      border-color: transparent;
+      .fees__categories__entry__inner {
+        border: 0;
+      }
+      .aum {
+        @include breakpoint(desktop) {
+          width: calc(100% + 28px);
+          margin-left: -14px;
+          position: relative;
+          bottom: -14px;
+          left: 0;
+          padding-bottom: 22px;
+          }
+        }
+      }
+    }
+  }
+  .fees-chart {
+    img {
+      width: 100%;
+      @include breakpoint(desktop) {
+        width: 85%;
+        margin-left: -8%;
+      }
+    }
+    .legal {
+      @include font-size(12);
+      @include line-height(12);
+      &:first-of-type {
+        margin-top: calculateRem(40px);
+      }
+    }
+  }
+  .applet {
+    &.inner-page-section {
+      .subhead {
+        padding: 0 calculateRem(60px) 0;
+        margin: 0;
+      }
+    }
+  }

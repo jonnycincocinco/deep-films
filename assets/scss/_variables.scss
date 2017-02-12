@@ -1,0 +1,45 @@
+//  ## VARIABLES  -------------------------------------------------------------------//
+
+// Base Typography
+$base--fontSize: 16px;
+$base--fontFamily: Helvetica, Arial, sans-serif;
+$base--fontWeight: 400;
+
+// Base Colors
+$base--color: #333;
+$base--linkColor: #fff;
+$base--linkColorHover: darken($base--linkColor, 50%);
+$base--projectLinkColor: #fff;
+$base--projectLinkColorHover: darken($base--projectLinkColor, 15%);
+
+$base--backgroundColor: #0c1c58;
+$base--headerColor: #0c1c58;
+$base--colorWhite: #fff;
+$base--lightHeaderColor: #e0e0e0;
+$base--ruleColor: #666;
+$base--dateColor: #999;
+$base--ctaColor: #f2703f;
+$base--ctaColorHover: #c23c27;
+$base--ctaTextColor: #fff;
+$base--loaderBackgroundColor: #eee;
+$base--loaderColor: #ccc;
+$base--cardColor: #444;
+$base--bgStripcolor: #034168;
+$base--verde: #7aab1b;
+$base--mustard: #c7bf2f;
+$base--orange: #f7931f;
+$base--blueHighlight: #3987c1;
+$base--filterBg: #3987c1;
+
+
+// Breakpoints
+$breakpoint-phone: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-cinema: 1300px;
+
+$breakpointNewsMax: 1300px;
+$breakpointNewsMin: 1100px;
+
+// Gradients
+$gradient--dark: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));

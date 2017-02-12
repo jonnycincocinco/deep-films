@@ -1,0 +1,35 @@
+<div class="page page-our-work anim-in-out anim-slide-below-fade" ng-cloak>
+
+    <div class="work--container work--container--home">
+
+
+      <div class="inner-hero library-item">
+        <div class="container">
+          <div class="intro text-align-center white">
+            <h1>The Work</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-strip inner-page-section library-item">
+        <div class="container">
+          <!--div infinite-scroll="loadMore()" infinite-scroll-distance='5' class=""-->
+          <div class="">
+            <article class="news--article news--featured--article" ng-repeat="post in posts|orderBy:'title.rendered'" ng-class="{'featured':post.acf.featured == true,'featured-follow':post.acf.featured_follow == true}">
+                <a href="{{site + '#/work/' + post.slug}}">
+                  <picture picturefill>
+                    <img ng-srcset="{{post.acf.thumbnail | to_trustedURL}}" alt="{{post.acf.title.rendered | to_trusted}}" class="scroll-element"  imageonload="contentLoaded()" />
+                  </picture>
+                  <div class="work--featured-text">
+                    <div>
+                      <h2 class="subhead-middle" ng-bind-html="post.acf.title | to_trusted"></h2>
+                      <h2 class="subhead subhead-bottom" ng-bind-html="post.acf.client | to_trusted"></h2>
+                    </div>
+                  </div>
+                </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
