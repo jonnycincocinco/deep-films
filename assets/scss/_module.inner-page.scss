@@ -142,14 +142,14 @@
       padding: 0 calculateRem(60px) 0;
     }
     @include breakpoint(tablet) {
-      padding: 0 calculateRem(100px);
+  //    padding: 0 calculateRem(100px);
     }
     .about-us--container & {
       @include breakpoint(tablet) {
-        padding: 0 calculateRem(100px) calculateRem(40px);
+    //    padding: 0 calculateRem(100px) calculateRem(40px);
       }
       @include breakpoint(desktop) {
-        padding: 0 calculateRem(200px) calculateRem(60px);
+    //    padding: 0 calculateRem(200px) calculateRem(60px);
       }
     }
 

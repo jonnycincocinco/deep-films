@@ -4,7 +4,7 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
     $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads.
         'self',
-        'https://s3.amazonaws.com/cdn.eleveninc.com/**/*'
+        'https://player.vimeo.com/video/*'
 
     ]);
 

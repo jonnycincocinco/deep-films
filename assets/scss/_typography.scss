@@ -10,7 +10,7 @@
 }
 
 %circular {
-  font-family: "Mrs Eaves Italic", georgia, arial, sans-serif;
+  font-family: "Mrs Eaves Roman", georgia, arial, sans-serif;
   font-weight: normal;
 }
 
@@ -104,7 +104,7 @@ p:first-child {
 }
 
 p {
-  @include font-size(15);
+  @include font-size(18);
   margin: 0 0 calculateRem(12px);
 }
 

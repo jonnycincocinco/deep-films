@@ -40,12 +40,11 @@ return {
     $rootScope.bodylayout = 'work';
     $scope.posts = [];
 
-
     $scope.PostsByTypeAndSlug = PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams);
 
-    // PostsByTypeAndSlug.getPostsByTypeAndSlug('expertise').query($stateParams,function(response){
-    //     $scope.posts = response;
-    // });
+  //   PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams,function(response){
+  //     $scope.posts = response;
+  //   });
 
     $rootScope.toggleHiddenNav = function(){
       $rootScope.showMenu = !$rootScope.showMenu;
@@ -67,13 +66,8 @@ return {
     });
 
 
-    $scope.loadMore = function() {
-    var items = $scope.PostsByTypeAndSlug;
-    for (var i = 0; i < items.length; i++) {
-      console.log(items[i].acf.thumbnail);
-  //    $scope.PostsByTypeAndSlug.push(last + i);
-    }
-
+  $scope.getIframeSrc = function (videoId) {
+    return 'https://player.vimeo.com/video/' + videoId;
   };
 
     $scope.clickedNext = function(){
@@ -91,5 +85,11 @@ return {
       //console.log('close clicked', $rootScope.$state.$current.path[0].url.prefix);
     };
 
+
+    $scope.$watch('viewContentLoaded', function(event) {
+      $timeout(function() {
+        window.sr = ScrollReveal().reveal('.news--featured--article');
+      }, 800);
+    });
 
 }]);

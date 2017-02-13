@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em; }
 
 html {
-  font-family: "Mrs Eaves Italic", georgia, arial, sans-serif;
+  font-family: "Mrs Eaves Roman", georgia, arial, sans-serif;
   font-weight: normal; }
 
 h2.subhead, .category-subhead {
@@ -422,7 +422,7 @@ h2.subhead, .category-subhead {
   font-weight: normal; }
 
 html {
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
   font-weight: 400;
   line-height: 1.4;
@@ -487,8 +487,8 @@ p:first-child {
   margin-top: 0; }
 
 p {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0 0 0.75rem; }
 
 ul,
@@ -571,7 +571,7 @@ a:active {
 
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 16px; }
+    font-size: 18px; }
   ol,
   ul {
     padding: 0; } }
@@ -1375,9 +1375,7 @@ button.cta.desktop-nav--cta {
   background: #40709c;
   width: 100%;
   padding: 5px 10px;
-  position: relative;
-  font-size: 20px;
-  font-size: 1.25rem; }
+  position: relative; }
   .work .categorybar {
     display: inline-block; }
   .categorybar button {
@@ -2010,15 +2008,6 @@ button.cta,
   line-height: 2rem; }
   .page-home .inner-page-section .subhead {
     padding: 0 3.75rem 0; }
-  @media only screen and (min-width: 768px) {
-    .inner-page-section .subhead {
-      padding: 0 6.25rem; } }
-  @media only screen and (min-width: 768px) {
-    .about-us--container .inner-page-section .subhead {
-      padding: 0 6.25rem 2.5rem; } }
-  @media only screen and (min-width: 1024px) {
-    .about-us--container .inner-page-section .subhead {
-      padding: 0 12.5rem 3.75rem; } }
 
 .inner-page-section li {
   font-size: 16px;
@@ -2270,6 +2259,7 @@ h2.subhead-middle {
 .work--container .news--featured--article {
   position: relative;
   padding: 10px;
+  visibility: hidden;
   float: left;
   display: block;
   margin-right: 0%;
@@ -2387,3 +2377,24 @@ h2.subhead-middle {
   font-size: 42px;
   font-size: 2.625rem;
   color: #fff; }
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  z-index: 200; }
+  .video-wrapper:before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; }
+  .video-wrapper .video-iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 0 none;
+    z-index: 100; }

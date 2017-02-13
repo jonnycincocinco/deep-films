@@ -91,7 +91,7 @@
           <div class="dropdown-inner" ng-class="navOpen">
             <ul class="filter-list">
               <li class="">
-                <a ui-sref="work" ng-class="{active: $state.current.activetab == 'work'}" ng-click="toggleHiddenNav()">All</a>
+                <a ui-sref="work" ng-class="{active: $state.current.activetab == 'work'}" ng-click="toggleHiddenNav()">Featured</a>
               </li>
               <li class="">
                 <a ui-sref="branded-content" ng-click="toggleHiddenNav()" ng-class="{active: $state.current.activetab == 'branded-content'}">Branded Content</a>

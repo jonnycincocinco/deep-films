@@ -29,7 +29,6 @@ gulp.task('angular', function(){
 		'node_modules/angular-resource/angular-resource.min.js',
 		'node_modules/angular-sanitize/angular-sanitize.min.js',
 		'node_modules/angular-animate/angular-animate.min.js',
-		'node_modules/ng-infinite-scroll/build/ng-infinite-scroll.min.js',
 		'node_modules/angular-ui-router/build/angular-ui-router.min.js',
 		'node_modules/slick-carousel/slick/slick.min.js',
 		'node_modules/angular-slick-carousel/dist/angular-slick.min.js',

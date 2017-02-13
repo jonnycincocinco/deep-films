@@ -11,7 +11,6 @@ var app;
         'ngPicturefill',
         'slickCarousel',
         'anim-in-out',
-        'infinite-scroll',
         '720kb.socialshare',
         'Deepfilms.controllers',
         'Deepfilms.directives',
