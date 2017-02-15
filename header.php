@@ -40,7 +40,17 @@
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+  <script>
+    window.sr = ScrollReveal();
+    if (sr.isSupported()) {
+        document.documentElement.classList.add('sr');
+      }
+  </script>
+  <style>
+  .sr .sr-article { visibility: hidden; }
+   </style>
   <?php wp_head();?>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/latest/slick.min.js"></script>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -67,7 +77,7 @@
             <span></span>
             <span></span>
           </a>
-          <a class="desktop-nav--logo" title="<?php echo bloginfo('name'); ?>" href="/#/"><?php echo bloginfo('name'); ?></a>
+          <a ui-sref="home-inner" class="desktop-nav--logo" title="<?php echo bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a>
           <ul class="desktop-nav--main">
             <li class=""><a ui-sref="work" ng-class="{active: $state.current.activetab == 'work'}">Work</a></li>
             <li><a ui-sref="about" ng-class="{active: $state.current.activetab == 'about'}">About</a></li>
@@ -80,14 +90,11 @@
   </nav>
   <div class="categorybar">
     <div class="container">
-      <div class="categorybar wrapper-inner">
-        <div class="categorybar dropdown">
-          <div class="dropdown-toggle">
-            <button class="toggle" ng-click="toggleHiddenNav()">
-              <span class="toggle-text">{{categoryName}}</span>
-              <i class="icon icon-directdown toggle-arrow"></i>
-            </button>
-          </div>
+      <div class="categorybar-dropdown">
+        <div class="dropdown-toggle">
+          <button class="toggle" ng-click="toggleHiddenNav()">
+            <span class="toggle-text">{{categoryName}}</span>
+          </button>
           <div class="dropdown-inner" ng-class="navOpen">
             <ul class="filter-list">
               <li class="">

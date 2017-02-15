@@ -6,6 +6,8 @@ return {
     link: function (scope, element, attrs) {
         element.bind('load', function() {
             scope.$apply(attrs.imageonload);
+            $('.news--featured--article').addClass('is-ready');
+        //    sr.sync();
         });
     }
 };
@@ -70,25 +72,42 @@ return {
     return 'https://player.vimeo.com/video/' + videoId;
   };
 
-    $scope.clickedNext = function(){
-      getElement.setValue('next');
-      //console.log('previous clicked', $location.$$path);
+    // $scope.clickedNext = function(){
+    //   getElement.setValue('next');
+    //   //console.log('previous clicked', $location.$$path);
+    // }
+    //
+    // $scope.clickedPrevious = function(){
+    //   getElement.setValue('previous');
+    //   //console.log('previous clicked', $location.$$path);
+    // }
+    //
+    // $scope.clickedClose = function(){
+    //   getElement.setValue('close');
+    //   //console.log('close clicked', $rootScope.$state.$current.path[0].url.prefix);
+    // };
+
+    $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 100) {
+        $(".categorybar,.desktop-nav").addClass("shorter");
+    } else {
+        $(".categorybar,.desktop-nav").removeClass("shorter");
     }
+    });
 
-    $scope.clickedPrevious = function(){
-      getElement.setValue('previous');
-      //console.log('previous clicked', $location.$$path);
-    }
+    var config = {
+  //      easing: 'hustle',
+  //      reset:  false,
+  //      delay:  'onload',
+        vFactor: 0.40
+      }
 
-    $scope.clickedClose = function(){
-      getElement.setValue('close');
-      //console.log('close clicked', $rootScope.$state.$current.path[0].url.prefix);
-    };
-
-
+    //$rootScope.$watch('viewContentLoaded', function(event) {
     $scope.$watch('viewContentLoaded', function(event) {
       $timeout(function() {
-        window.sr = ScrollReveal().reveal('.news--featured--article');
+        window.sr = ScrollReveal(config).reveal('.news--featured--article');
+      //  sr.sync();
       }, 800);
     });
 

@@ -3,6 +3,7 @@
 .site-footer {
   padding: calculateRem(40px);
   position: relative;
+  @extend %circular-univers;
   .container {
     padding-bottom: calculateRem(20px);
   }

@@ -22,6 +22,15 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
         }
     )
 
+    .state('home-inner',
+        {
+            url: '/home',
+            controller: 'homeInnerView',
+            templateUrl: ajaxInfo.template_directory + '/templates/home-inner.html',
+            activetab: 'home'
+        }
+    )
+
     .state('work-item',
         {
             url: '/work/:slug',

@@ -142,42 +142,6 @@ class angularjs_wp_theme {
 
 	function createDeep() {
 		$labels = array(
-			'name'               => _x( 'Deep', 'post type general name' ),
-			'singular_name'      => _x( 'Deep', 'post type singular name' ),
-			'add_new'            => _x( 'Add New', 'Deep' ),
-			'add_new_item'       => __( 'Add New Deep' ),
-			'edit_item'          => __( 'Edit Deep' ),
-			'new_item'           => __( 'New Deep' ),
-			'all_items'          => __( 'All Deep' ),
-			'view_item'          => __( 'View Deep' ),
-			'search_items'       => __( 'Search Deep' ),
-			'not_found'          => __( 'No Deep found' ),
-			'not_found_in_trash' => __( 'No Deep found in the Trash' ),
-			'parent_item_colon'  => '',
-			'menu_name'          => 'Deep'
-		);
-		$args = array(
-			'labels'        => $labels,
-			'description'   => 'Holds our Deep and Deep specific data',
-			'public'        => true,
-			'menu_position' => -3, // set the menu position in the admin menu
-			'show_ui' => true,
-	  		'hierarchical' => true,
-			'show_in_menu' => true,
-			'query_var' => true,
-			'capability_type' => 'page',
-			'taxonomies' => array('post_tag'),
-			'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'tags', 'page-attributes', '' ),
-			'has_archive'   => true,
-			'taxonomies' => array('category', 'post_tag') // this is IMPORTANT
-
-		);
-		register_post_type( 'expertise', $args );
-		register_taxonomy( 'format', 'expertise', $args );
-	}
-
-	function createDeepness() {
-		$labels = array(
 			'name'               => _x( 'Deepness', 'post type general name' ),
 			'singular_name'      => _x( 'Deepness', 'post type singular name' ),
 			'add_new'            => _x( 'Add New', 'Deepness' ),
@@ -198,7 +162,7 @@ class angularjs_wp_theme {
 			'public'        => true,
 			'menu_position' => -3, // set the menu position in the admin menu
 			'show_ui' => true,
-	  		'hierarchical' => true,
+	  	'hierarchical' => true,
 			'show_in_menu' => true,
 			'query_var' => true,
 			'capability_type' => 'page',
@@ -208,8 +172,8 @@ class angularjs_wp_theme {
 			'taxonomies' => array('category', 'post_tag') // this is IMPORTANT
 
 		);
-		register_post_type( 'deepness', $args );
-		register_taxonomy( 'format', 'deepness', $args );
+		register_post_type( 'expertise', $args );
+		register_taxonomy( 'format', 'expertise', $args );
 	}
 
 	function createWorkItem() {

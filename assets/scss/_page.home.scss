@@ -7,6 +7,10 @@ body  {
   }
 }
 .page-home--hero {
+  .slider {
+    position: relative;
+    z-index: 11;
+  }
   .slide-wrapper {
     position: relative;
     height: 100vh;
@@ -21,7 +25,7 @@ body  {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background: url('https://i.vimeocdn.com/video/617608264.webp?mw=1920&mh=1080&q=70') no-repeat;
     background-size: cover;
     transition: 1s opacity;
     video {
@@ -59,17 +63,23 @@ body  {
       justify-content: center;
     }
     .slide-two {
-      background: url(https://i.vimeocdn.com/video/603934043.jpg?mw=1920&mh=1080&q=100) center center no-repeat fixed;
+      background-image: url(https://i.vimeocdn.com/video/603934043.jpg?mw=1920&mh=1080&q=100);
     }
     .slide-three {
-      background: url(https://i.vimeocdn.com/video/613031876.jpg?mw=1920&mh=1080&q=100) center center no-repeat fixed;
+      background-image: url(https://i.vimeocdn.com/video/613031876.jpg?mw=1920&mh=1080&q=100);
+    }
+    .mtn-logo {
+      z-index: 1;
+      width: 100vw;
+      height: 100vh;
+      background-image: url(/wp-content/themes/deep-2017/build/images/pages/mtn-logo.jpg);
     }
 }
 
 h2 {
   &.subhead {
     @extend %circular-univers-ultra;
-    @include font-size(100);
+    @include font-size(85);
     @include line-height(100);
     margin-bottom: 0;
     letter-spacing: 1px;
@@ -78,8 +88,52 @@ h2 {
     }
   }
   &.subhead-middle {
-    @include font-size(75);
+    @include font-size(60);
     @include line-height(100);
     margin-bottom: 0;
+  }
+}
+
+.site-footer {
+  .home & {
+    display: none;
+  }
+}
+
+//social links
+.home-list--social {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  z-index: 11;
+  opacity: 0;
+  transition: all 200ms linear;
+  &.active {
+    opacity: 1;
+  }
+}
+.home-list--social li {
+  display: inline-block;
+}
+.home-list__icon {
+  background-size: cover;
+  color: #c8cfdd;
+  display: block;
+  font-size: 14px;
+  font-size: .77778rem;
+  line-height: 2;
+  height: 1.61111rem;
+  margin: 0 calculateRem(5px);
+  text-indent: -999em;
+  overflow: hidden;
+  width: 1.61111rem;
+  &.site-footer-list__icon--facebook {
+    background-image: url('../images/icons/icon-facebook.png');
+  }
+  &.site-footer-list__icon--twitter {
+    background-image: url('../images/icons/icon-twitter.png');
+  }
+  &.site-footer-list__icon--instagram {
+    background-image: url('../images/icons/icon-instagram.png');
   }
 }

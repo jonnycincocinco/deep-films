@@ -2,7 +2,7 @@
 
 header {
     @include fill-parent();
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: $base--headerColor;
@@ -12,6 +12,7 @@ header {
     color: #fff;
     .home & {
       background: none;
+      border: none;
     }
 }
 
@@ -19,16 +20,17 @@ header {
   @include fill-parent();
   float: left;
   clear: both;
-//  box-shadow: 0 0 2px rgba(0,0,0,.15);
+  border-bottom: 10px solid $color--magenta;
+  transition: all 150ms ease-in-out;
+  position: relative;
+  top: 0;
+  .home & {
+    border: none;
+  }
+  &.shorter {
+    top: -120px;
+  }
 }
-//linear-gradient(to right bottom,#6dfdff,#6dfdff 30%,#0d87c9 80%,#030e5d 100%)
-
-//linear-gradient(to right bottom,#5183b7,#348aff 30%,#35a9e8 80%,rgba(3, 47, 93, 0.66) 100%)
-
-//linear-gradient(to right bottom,#c1fff9,#41a99f 30%,#0d87c9 80%,rgba(21, 16, 90, 0.68) 100%)
-//linear-gradient(to right bottom,rgba(21, 16, 90, 0.68),rgba(21, 16, 90, 0.68) 30%,#0d87c9 80%,#41a99f 100%)
-
-//linear-gradient(to right bottom,rgba(35, 27, 138, 0.83),rgba(19, 15, 86, 0.78) 30%,#319dd8 80%,rgba(79, 199, 234, 0.76) 100%)
 .desktop-nav--mobile-toggle {
   float: right;
   position: relative;
@@ -109,10 +111,11 @@ header {
 .desktop-nav--main {
   float: right;
   list-style: none;
-  margin: 23px 30px 0 0;
+  margin: 52px 0 0 0;
   padding: 0;
   text-transform: uppercase;
   display: none;
+   @extend %circular-univers;
   > li {
     > a {
       color: #fff;
@@ -123,7 +126,7 @@ header {
   }
   li {
     float: left;
-    @include font-size(16);
+    @include font-size(13);
     margin-right: 23px;
     &:last-child {
       margin-right: 0;
@@ -135,85 +138,6 @@ header {
       }
       &:hover {
         opacity: .6;
-      }
-    }
-    &.desktop-nav--main__sub-wrapper {
-      position: relative;
-      margin-right: 46px;
-      padding-bottom: 9px;
-      &:after {
-        @include caret(-45deg,17px,-17px);
-      }
-      &:hover {
-        .desktop-nav--main__sub {
-          opacity: 1;
-          transform: translateY(0);
-          visibility: visible;
-          li {
-            a {
-              opacity: 1;
-              -webkit-transform: translateY(0);
-              transform: translateY(0);
-            }
-          }
-        }
-      }
-    }
-  }
-  .desktop-nav--main__sub {
-    position: absolute;
-    top: calculateRem(17px);
-    left: 3px;
-    width: 155px;
-    margin-top: 8px;
-    padding: 8px 0 16px;
-    visibility: hidden;
-    text-transform: none;
-    background: $base--backgroundColor;
-    z-index: 5;
-    @include font-size(14);
-    line-height: 1.5;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,.25);
-    border-radius: .222rem;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all .3s cubic-bezier(.22,.61,.36,1);
-    &:before {
-      bottom: 100%;
-      left: 49%;
-      content: " ";
-      height: 25px;
-      width: 25px;
-      background-image: url(../images/icons/icon-arrow.png);
-      position: absolute;
-      background-size: 18px auto;
-      background-position: bottom center;
-      background-repeat: no-repeat;
-      margin-left: -12px;
-    }
-    li {
-      display: block;
-      a {
-        padding: 7px 15px 0;
-        display: block;
-        opacity: 0;
-        transform: translateY(8px);
-        transition: all .3s cubic-bezier(.22,.61,.36,1);
-      }
-      &:nth-child(2n) {
-        a {
-          transition-delay: .02s;
-        }
-      }
-      &:nth-child(3n) {
-        a {
-          transition-delay: .04s;
-        }
-      }
-      &:nth-child(3n) {
-        a {
-          transition-delay: .06s;
-        }
       }
     }
   }
@@ -235,7 +159,7 @@ button.cta {
   margin-top: calculateRem(18px);
   margin-left: 0;
   width: 156px;
-  height: 68px;
+  height: 63px;
   background: url('../images/global/deep-films-logo.png') no-repeat 0 0;
   background-size: 100%;
   text-indent: -9999px;
@@ -244,54 +168,12 @@ button.cta {
     display: none;
   }
   @include breakpoint(tablet) {
-    margin-top: calculateRem(20px);
+//    margin-top: calculateRem(20px);
   }
   @include breakpoint(desktop) {
-    margin-top: calculateRem(34px);
+    margin: calculateRem(28px) 0;
   }
 
-}
-
-.desktop-nav--social {
-  float: right;
-  list-style: none;
-  margin: 26px 60px 0 0;
-  padding: 0;
-  display: none;
-  @include breakpoint(desktop) {
-      display: block;
-  }
-  li {
-    float: left;
-    margin: 0 10px 0 0;
-    padding: 0;
-    &:last-child {
-      margin-right: 0;
-    }
-    a {
-      float: left;
-      width: 20px;
-      height: 20px;
-      text-indent: -9999px;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      background-size: 20px 20px;
-      @include opacity(.75);
-      &:hover {
-        @include opacity(.45);
-      }
-      @include transition(opacity 0.5s);
-      &.header-nav--facebook {
-        background-image: url('../images/icons/icon-facebook.svg');
-      }
-      &.header-nav--twitter {
-        background-image: url('../images/icons/icon-twitter.svg');
-      }
-      &.header-nav--instagram {
-        background-image: url('../images/icons/icon-instagram.svg');
-      }
-    }
-  }
 }
 
 .mobile-nav {
@@ -404,54 +286,144 @@ button.cta {
   }
 }
 
-
-
 .categorybar {
   display: none;
-  background: #40709c;
+  background: $color--justBlue;
+  color: $color--yellow;
   width: 100%;
-  padding: 5px 10px;
+  padding: 18px 10px;
   position: relative;
-//  @include font-size(20);
+  transition: all 150ms ease-in-out;
+  overflow: hidden;
+  &:hover {
+    overflow: visible;
+  }
+  @include font-size(14);
+  @extend %circular-univers;
+  &.shorter {
+    padding: 0 10px;
+    top: -120px;
+    .dropdown-inner {
+      top: 18px;
+    }
+    button {
+      border-top: 2px solid $color--yellow;
+      min-width: 120px;
+      &:after {
+        top: -6px;
+        right: -32px;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
   .work & {
     display: inline-block;
+  }
+  .dropdown-toggle {
+    position: relative;
+    &:hover {
+        .dropdown-inner {
+          opacity: 1;
+          transform: translateY(0);
+          visibility: visible;
+          li {
+            a {
+              opacity: 1;
+              -webkit-transform: translateY(0);
+              transform: translateY(0);
+            }
+          }
+        }
+
+    }
   }
   button {
     background: none;
     border: none;
     position: relative;
+    min-width: 176px;
+    text-align: left;
     &:after {
       position: absolute;
-      top: 12px;
-      right: -32px;
+      top: 5px;
+      right: 0;
       content: " ";
       width: 10px;
       height: 5px;
-      border-top: solid 10px #fff;
+      border-top: solid 10px $color--yellow;
       border-left: solid 10px transparent;
       border-right: solid 10px transparent;
       transform: scale(.6);
     }
   }
   .dropdown-inner {
-    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all .3s cubic-bezier(.22,.61,.36,1);
     position: absolute;
-    top: 48px;
-    left: 10px;
-    background: #000;
-    padding: 0 10px 10px;
-    background: $base--filterBg;
+    top: 26px;
+    left: -13px;
+    min-width: 170px;
+    background: $color--mediumBlue;
+    box-shadow: 17px 13px 47px -6px rgba(0,0,0,.75);
     &.open {
       display: block;
     }
-
   }
   .filter-list {
+      padding: 0;
+      margin-bottom: 20px;
     li {
       list-style: none;
+      &:hover {
+        a {
+          color: #fff;
+        }
+      }
       a {
         display: block;
-      }
+        opacity: 0;
+        padding: 3px 0;
+        transform: translateY(8px);
+        transition: all .3s cubic-bezier(.22,.61,.36,1);
+        padding: 10px 20px;
+          &:hover {
+            background: $color--magenta;
+            transition: none;
+            transition-delay: 0s !important;
+          }
+          &.active {
+            color: $color--yellow;
+            cursor: default;
+            &:hover {
+              cursor: default;
+              color: #fff;
+          //    background: none;
+            }
+          }
+        }
+        &:nth-child(1n) {
+          a {
+            transition-delay: .02s;
+          }
+        }
+        &:nth-child(2n) {
+          a {
+            transition-delay: .04s;
+          }
+        }
+        &:nth-child(3n) {
+          a {
+            transition-delay: .06s;
+          }
+        }
+        &:nth-child(4n) {
+          a {
+            transition-delay: .08s;
+          }
+        }
     }
   }
 }

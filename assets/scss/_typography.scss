@@ -47,11 +47,12 @@ html {
 
 h1 {
   @extend %circular-headline;
-  @include font-size(80);
+  @include font-size(120);
   @include line-height(90);
   margin: 0 0 calculateRem(10px) 0;
   font-weight: 300;
   letter-spacing: 0.02rem;
+  color: $color--lightBlue;
 }
 
 h2 {

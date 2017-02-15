@@ -123,9 +123,9 @@
     @include line-height(30);
   }
   .container {
-    margin-top: calculateRem(70px);
+    margin-top: calculateRem(100px);
     @include breakpoint(tablet) {
-      margin-top: calculateRem(70px);
+      margin-top: calculateRem(150px);
     }
   }
 }

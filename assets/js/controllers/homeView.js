@@ -7,44 +7,34 @@ angular.module('Deepfilms.controllers')
 
     $rootScope.bodylayout = 'home';
 
-    $scope.slickConfig = {
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      speed: 300,
-      fade: true,
-      autoplaySpeed: 35000,
-      dots: true,
-        prevArrow: '.carousel-left',
-        nextArrow: '.carousel-right',
-        event: {
-            beforeChange: function (event, slick, currentSlide, nextSlide) {
-                // before...
-            },
-            afterChange: function (event, slick, currentSlide, nextSlide) {
-                // after...
-            }
-        },
-        /*responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    swipeToSlide: true
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    swipeToSlide: true
-                }
-            }
-        ]*/
-    };
+    var slider = $('.slider').slick({
+    autoplay: true,
+    autoplaySpeed: 12000,
+    dots: true,
+    arrows: false,
+    infinite: false,
+    speed: 400,
+    fade: true,
+    pauseOnHover: false,
+    slide: 'div',
+    cssEase: 'linear'
+    });
+
+    slider.on('afterChange', function(event, slick, currentSlide){
+      if( currentSlide > 0 ) {
+       slider.slick("setOption", "autoplaySpeed", 5000);
+         }
+     if( slick.slideCount === currentSlide + 1 ){
+          slick.dots = false;
+          slick.paused = true;
+          slider.slick('unslick');
+          $('.home-list--social').addClass('active');
+        }
+      });
+
+      $('.desktop-nav--logo').click(function(){
+        slider.slick('unslick');
+      })
 
     var vid1 = angular.element(document.getElementById('vid-1'));
     var firstVid = vid1[0];
