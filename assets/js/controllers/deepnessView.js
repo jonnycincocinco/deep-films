@@ -37,7 +37,7 @@ return {
 
     $rootScope.$state = $state;
 
-    $rootScope.bodylayout = 'deepness';
+    $rootScope.bodylayout = 'deepness not-work';
     $scope.posts = [];
 
 

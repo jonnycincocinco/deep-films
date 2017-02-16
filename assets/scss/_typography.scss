@@ -19,6 +19,11 @@
   font-weight: normal;
 }
 
+%circular-univers-bold {
+  font-family: "Univers 65 Bold", helvetica, arial, sans-serif;
+  font-weight: 900;
+}
+
 %circular-univers-ultra {
   font-family: "Univers Pro 59 UltraCondensed", helvetica, arial, sans-serif;
   font-weight: normal;
@@ -105,8 +110,9 @@ p:first-child {
 }
 
 p {
-  @include font-size(18);
+  @include font-size(16);
   margin: 0 0 calculateRem(12px);
+  @extend %circular-univers;
 }
 
 ul,

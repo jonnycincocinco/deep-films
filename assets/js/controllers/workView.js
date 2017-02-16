@@ -40,6 +40,9 @@ return {
     $rootScope.$state = $state;
 
     $rootScope.bodylayout = 'work';
+    if ($state.current.activetab == 'demos') {
+  //    $rootScope.bodylayout = 'work not-work';
+    }
     $scope.posts = [];
 
     $scope.PostsByTypeAndSlug = PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams);

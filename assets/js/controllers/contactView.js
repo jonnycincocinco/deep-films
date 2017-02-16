@@ -5,9 +5,9 @@ angular.module('Deepfilms.controllers')
 
     $rootScope.$state = $state;
 
-    $rootScope.bodylayout = 'contact';
+    $rootScope.bodylayout = 'contact not-work';
 
-    
+
     var startAnimations = function(){
 
         var tl1 = new TimelineMax({delay: 0});

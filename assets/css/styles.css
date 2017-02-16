@@ -416,9 +416,13 @@ html {
   font-family: "Mrs Eaves Roman", georgia, arial, sans-serif;
   font-weight: normal; }
 
-.desktop-nav--main, .categorybar, .site-footer {
+p, .desktop-nav--main, .categorybar, .site-footer {
   font-family: "Univers Pro 55 Roman", helvetica, arial, sans-serif;
   font-weight: normal; }
+
+.desktop-nav--main li a.active {
+  font-family: "Univers 65 Bold", helvetica, arial, sans-serif;
+  font-weight: 900; }
 
 h2.subhead, .category-subhead {
   font-family: "Univers Pro 59 UltraCondensed", helvetica, arial, sans-serif;
@@ -491,8 +495,8 @@ p:first-child {
   margin-top: 0; }
 
 p {
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 16px;
+  font-size: 1rem;
   margin: 0 0 0.75rem; }
 
 ul,
@@ -1048,6 +1052,19 @@ header {
     border: none; }
   .desktop-nav.shorter {
     top: -120px; }
+  .desktop-nav:after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background: #298fff;
+    bottom: -70px;
+    transition: all 150ms linear; }
+    .not-work .desktop-nav:after {
+      height: 23px;
+      bottom: -33px; }
+    .home .desktop-nav:after {
+      height: 0; }
 
 .desktop-nav--mobile-toggle {
   float: right;
@@ -1134,8 +1151,6 @@ header {
       margin-right: 0; }
     .desktop-nav--main li a {
       transition: all 200ms ease-in-out; }
-      .desktop-nav--main li a.active {
-        font-weight: bold; }
       .desktop-nav--main li a:hover {
         opacity: .6; }
 
@@ -1272,7 +1287,6 @@ button.cta.desktop-nav--cta {
 
 .categorybar {
   display: none;
-  background: #298fff;
   color: #F5FA16;
   width: 100%;
   padding: 18px 10px;
@@ -1446,7 +1460,8 @@ button.cta.desktop-nav--cta {
     line-height: 20px;
     line-height: 1.25rem; }
   .site-footer .site-footer-list--social li {
-    display: inline-block; }
+    display: inline-block;
+    cursor: pointer; }
   .site-footer .site-footer-list__icon {
     background-size: cover;
     color: #c8cfdd;
@@ -1841,6 +1856,9 @@ button.cta,
     padding-bottom: 0; }
   .section-strip.flush-top {
     padding-top: 0; }
+  .section-strip.inner-hero {
+    position: relative;
+    top: 5rem; }
 
 .pattern-strip {
   background: #034168 url(../images/global/bg-pattern.png) 0 0;
@@ -1960,12 +1978,6 @@ button.cta,
   line-height: 30px;
   line-height: 1.875rem; }
 
-.inner-hero .container {
-  margin-top: 6.25rem; }
-  @media only screen and (min-width: 768px) {
-    .inner-hero .container {
-      margin-top: 9.375rem; } }
-
 .inner-page-section .subhead {
   font-size: 18px;
   font-size: 1.125rem;
@@ -2080,7 +2092,7 @@ body.home {
   height: auto;
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
-  background: url("https://i.vimeocdn.com/video/617608264.webp?mw=1920&mh=1080&q=70") no-repeat;
+  background: url("https://i.vimeocdn.com/video/617608264.jpg?mw=1920&mh=1080&q=70") no-repeat;
   background-size: cover;
   transition: 1s opacity; }
   .page-home--hero .video-background video {
@@ -2189,6 +2201,9 @@ h2.subhead-middle {
   font-size: 12px;
   font-size: 0.75rem; }
 
+.about-team .icon-text-col__item .grid__item p {
+  text-align: justify; }
+
 @media only screen and (min-width: 768px) {
   .about-team .icon-text-col__item .grid__item .icon-text-col__icon {
     float: left;
@@ -2232,6 +2247,12 @@ h2.subhead-middle {
     width: 66.66667%; }
     .about-team .icon-text-col__item .grid__item .icon-text-col__text:last-child {
       margin-right: 0; } }
+
+.about-team .icon-text-col__item.second-item .icon-text-col__text {
+  padding: 0 26px 0 0; }
+
+.about .opening .icon-text-col__text {
+  padding: 0 7.5rem; }
 
 .work--container .inner-hero.bg-strip {
   padding-top: 5rem;
@@ -2296,7 +2317,8 @@ h2.subhead-middle {
         float: left;
         display: block;
         margin-right: 0%;
-        width: 66.66667%; }
+        width: 66.66667%;
+        float: right; }
         .work--container .news--featured--article.featured:last-child {
           margin-right: 0; }
       .work--container .news--featured--article.featured-follow {
@@ -2308,6 +2330,8 @@ h2.subhead-middle {
           margin-right: 0; }
         .work--container .news--featured--article.featured-follow:nth-of-type(odd) {
           padding: 4px 10px; } }
+  .work--container .news--featured--article:hover .work--featured-text {
+    opacity: 1; }
   .work--container .news--featured--article:hover .picture-wrapper:before {
     opacity: .8; }
   .work--container .news--featured--article:before {
@@ -2328,6 +2352,8 @@ h2.subhead-middle {
   bottom: 0;
   left: 0;
   z-index: 200;
+  opacity: 0;
+  transition: all 223ms ease-in-out;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

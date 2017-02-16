@@ -15,6 +15,9 @@
 }
 
 
+.second-item {
+
+}
 
 .about-team {
   .title {
@@ -23,6 +26,9 @@
   }
   .icon-text-col__item {
     .grid__item {
+      p {
+        text-align: justify;
+      }
       .icon-text-col__icon {
         @include breakpoint(tablet){
           @include span-columns(4 of 12);
@@ -63,6 +69,19 @@
           @include span-columns(8 of 12);
         }
       }
+    }
+    &.second-item {
+      .icon-text-col__text {
+        padding: 0 26px 0 0;
+      }
+    }
+  }
+}
+
+.opening {
+  .about & {
+    .icon-text-col__text {
+      padding: 0 calculateRem(120px);
     }
   }
 }

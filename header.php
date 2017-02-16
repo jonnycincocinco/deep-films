@@ -79,7 +79,7 @@
           </a>
           <a ui-sref="home-inner" class="desktop-nav--logo" title="<?php echo bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a>
           <ul class="desktop-nav--main">
-            <li class=""><a ui-sref="work" ng-class="{active: $state.current.activetab == 'work'}">Work</a></li>
+            <li class=""><a ui-sref="work" ng-class="{active: $state.current.activetab == 'work' || $state.current.activetab == 'demos' || $state.current.activetab == 'branded-content' || $state.current.activetab == 'corporate'}">Work</a></li>
             <li><a ui-sref="about" ng-class="{active: $state.current.activetab == 'about'}">About</a></li>
             <li><a ui-sref="deepness" ng-class="{active: $state.current.activetab == 'deepness'}">Deepness</a></li>
             <li><a ui-sref="contact" ng-class="{active: $state.current.activetab == 'contact'}">Contact</a></li>

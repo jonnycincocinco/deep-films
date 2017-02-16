@@ -3,21 +3,7 @@ angular.module('Deepfilms.controllers')
 .controller('aboutUsView', ['getElement', '$scope', '$rootScope', '$state', 'PostsByType', function (getElement, $scope, $rootScope, $state, PostsByType) {
     'use strict';
 
-    $rootScope.bodylayout = 'about';
-
-    $scope.getRetina = function (imageSrc) {
-      if (typeof imageSrc === 'string') {
-        var newPath = imageSrc.replace('.jpg', '@2x.jpg')
-        return newPath;
-      }
-    };
-
-    $scope.getImageBreakpointSrc = function (imageSrc, breakpoint) {
-      if (typeof imageSrc === 'string') {
-        var newPath = imageSrc.replace('.jpg', '-' + breakpoint + '.jpg');
-        return newPath;
-      }
-    };
+    $rootScope.bodylayout = 'about not-work';
 
     // input comma-adder
       $('input.number').keyup(function(event) {

@@ -17,6 +17,10 @@
     &.flush-top {
       padding-top: 0;
     }
+    &.inner-hero {
+      position: relative;
+      top: calculateRem(80px);
+    }
 }
 
 .pattern-strip {
@@ -123,9 +127,9 @@
     @include line-height(30);
   }
   .container {
-    margin-top: calculateRem(100px);
+    //margin-top: calculateRem(100px);
     @include breakpoint(tablet) {
-      margin-top: calculateRem(150px);
+    //  margin-top: calculateRem(150px);
     }
   }
 }

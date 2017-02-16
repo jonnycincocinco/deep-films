@@ -9,15 +9,15 @@ angular.module('Deepfilms.controllers')
 
     var slider = $('.slider').slick({
     autoplay: true,
-    autoplaySpeed: 12000,
+    autoplaySpeed: 14000,
     dots: true,
     arrows: false,
     infinite: false,
-    speed: 400,
+    speed: 250,
     fade: true,
     pauseOnHover: false,
-    slide: 'div',
-    cssEase: 'linear'
+    slide: 'div'
+  //  cssEase: 'linear'
     });
 
     slider.on('afterChange', function(event, slick, currentSlide){
