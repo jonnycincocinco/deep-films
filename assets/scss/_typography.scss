@@ -113,6 +113,7 @@ p {
   @include font-size(16);
   margin: 0 0 calculateRem(12px);
   @extend %circular-univers;
+  color: $color--lightestBlue;
 }
 
 ul,

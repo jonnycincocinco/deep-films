@@ -21,6 +21,7 @@
   picture {
     .picture-wrapper {
       position: relative;
+      opacity: 0;
       img {
         width: 100%;
       }
@@ -98,6 +99,9 @@
     }
     &.is-ready {
 //      opacity: 1;
+      .picture-wrapper {
+        opacity: 1;
+      }
     }
     &:before {
       content: '';
@@ -214,8 +218,8 @@
 
   .library-inner {
     h1 {
-      @include font-size(42);
-      color: #fff;
+  //    @include font-size(42);
+  //    color: #fff;
     }
   }
 
@@ -244,6 +248,24 @@
       background: #000;
       border: 0 none;
       z-index: 100;
+    }
+  }
+
+  //scroll reveal
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: matrix3d(0.8, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+    &.animated {
+      visibility: visible;
+      opacity: 1;
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
     }
   }
 

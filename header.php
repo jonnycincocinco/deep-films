@@ -38,17 +38,7 @@
     text-align: -3000px;
   }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
-  <script>
-    window.sr = ScrollReveal();
-    if (sr.isSupported()) {
-        document.documentElement.classList.add('sr');
-      }
-  </script>
-  <style>
-  .sr .sr-article { visibility: hidden; }
-   </style>
+  
   <?php wp_head();?>
   <script src="https://cdn.jsdelivr.net/jquery.slick/latest/slick.min.js"></script>
 

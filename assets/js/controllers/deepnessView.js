@@ -49,7 +49,15 @@ return {
 
     $scope.PostsByTypeAndSlug.$promise.then(function (response) {
       $scope.posts = response;
-      //console.log('ok promise loaded');
+      for (var i = 0; i < response.length; i++) {
+        var newDate = response[i].acf.date;
+        newDate = newDate.split(" ");
+        newDate[0] = newDate[0].substring(0, 3);
+        if( newDate[1].charAt( 0 ) === '0' )
+        newDate[1] = newDate[1].slice( 1 );
+        newDate[1] = newDate[1].replace(/,\s*$/, "");
+        response[i].acf.date = newDate;
+      }
     });
 
     $scope.clickedNext = function(){

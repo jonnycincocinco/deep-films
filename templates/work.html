@@ -13,7 +13,7 @@
       <div class="section-strip inner-page-section work-item">
         <div class="container">
           <div class="news--featured--article-container">
-            <article class="news--article news--featured--article sr-article" ng-repeat="post in posts|orderBy:'acf.position'|filter: post: post.acf.category='Featured'" ng-class="{'featured':post.acf.featured == true,'featured-follow':post.acf.featured_follow == true}">
+            <article class="news--article news--featured--article hidden reveal" ng-repeat="post in posts|orderBy:'acf.position'|filter: post: post.acf.category='Featured'" ng-class="{'featured':post.acf.featured == true,'featured-follow':post.acf.featured_follow == true}" when-visible="animateElementIn" when-not-visible="animateElementOut">
                 <a href="{{site + '#/work/' + post.slug}}">
                   <picture picturefill>
                     <div class="picture-wrapper">

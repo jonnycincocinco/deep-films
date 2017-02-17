@@ -26,6 +26,9 @@
   }
   .icon-text-col__item {
     .grid__item {
+      h2 {
+        color: $color--justBlue;
+      }
       p {
         text-align: justify;
       }

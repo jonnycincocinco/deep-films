@@ -1,0 +1,101 @@
+//  ## EARTHLY DNA  ----------------------------------------------------------//
+
+.deepness {
+  .ligature {
+    letter-spacing: 7px;
+  }
+  .subhead {
+    @extend %circular-univers-ultra;
+    @include font-size(44);
+    padding-top: calculateRem(30px);
+    padding-bottom: calculateRem(60px);
+  }
+  .news--article-container {
+    padding-left: 28px;
+  }
+    .news--article {
+      @include span-columns(6 of 12);
+      padding: 40px 40px 400px 0;
+      position: relative;
+      .deepness-img {
+        width: 90%;
+        background-size: cover;
+        position: absolute;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        background-position: 50%;
+        height: 275px;
+      }
+      .library--featured-text {
+        position: relative;
+        top: 265px;
+      }
+      h2 {
+        padding-right: 32px;
+        @include line-height(38);
+        margin-bottom: calculateRem(60px);
+        position: relative;
+        top: calculateRem(20px);
+        color: $color--mediumBlue;
+      }
+      p {
+      //  padding-right: 15px;
+      }
+    }
+    .library--author {
+      border: 1px solid;
+      display: inline-block;
+      right: 20px;
+      top: 7px;
+      border-style: solid;
+      border-width: 1px;
+      padding: 6px 0px 6px;
+      text-align: center;
+      width: 56px;
+      position: absolute;
+      margin: 0;
+      color: $color--lightestBlue;
+      .work-item-date-month {
+        @include font-size(16);
+        text-transform: uppercase;
+      }
+      .work-item-date-day {
+        @include font-size(23);
+        @include line-height(32);
+      }
+    }
+    .deepness--date {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-style: solid;
+      border-width: 1px;
+      margin-left: 15px;
+      margin-right: 0;
+      padding: 7px;
+      text-align: center;
+      width: 54px;
+      .deepness--date-month {
+        font-size: 14px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        display: block;
+      }
+    }
+    .deepness-item {
+      padding-left: 28px;
+      .library--author {
+        position: relative;
+        margin-top: calculateRem(20px);
+        margin-bottom: calculateRem(80px);
+      }
+      picture {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+}

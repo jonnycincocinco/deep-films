@@ -424,7 +424,7 @@ p, .desktop-nav--main, .categorybar, .site-footer {
   font-family: "Univers 65 Bold", helvetica, arial, sans-serif;
   font-weight: 900; }
 
-h2.subhead, .category-subhead {
+h2.subhead, .category-subhead, .deepness .subhead {
   font-family: "Univers Pro 59 UltraCondensed", helvetica, arial, sans-serif;
   font-weight: normal; }
 
@@ -497,7 +497,8 @@ p:first-child {
 p {
   font-size: 16px;
   font-size: 1rem;
-  margin: 0 0 0.75rem; }
+  margin: 0 0 0.75rem;
+  color: #eff4ff; }
 
 ul,
 ol {
@@ -1313,7 +1314,8 @@ button.cta.desktop-nav--cta {
   .work .categorybar {
     display: inline-block; }
   .categorybar .dropdown-toggle {
-    position: relative; }
+    position: relative;
+    display: inline-block; }
     .categorybar .dropdown-toggle:hover .dropdown-inner {
       opacity: 1;
       transform: translateY(0);
@@ -2201,6 +2203,9 @@ h2.subhead-middle {
   font-size: 12px;
   font-size: 0.75rem; }
 
+.about-team .icon-text-col__item .grid__item h2 {
+  color: #298fff; }
+
 .about-team .icon-text-col__item .grid__item p {
   text-align: justify; }
 
@@ -2268,7 +2273,8 @@ h2.subhead-middle {
         margin-bottom: -25rem; } }
 
 .work--container picture .picture-wrapper {
-  position: relative; }
+  position: relative;
+  opacity: 0; }
   .work--container picture .picture-wrapper img {
     width: 100%; }
   .work--container picture .picture-wrapper::before {
@@ -2334,6 +2340,8 @@ h2.subhead-middle {
     opacity: 1; }
   .work--container .news--featured--article:hover .picture-wrapper:before {
     opacity: .8; }
+  .work--container .news--featured--article.is-ready .picture-wrapper {
+    opacity: 1; }
   .work--container .news--featured--article:before {
     content: '';
     display: block; }
@@ -2426,11 +2434,6 @@ h2.subhead-middle {
       .library-categories li.selected a {
         font-weight: 900; }
 
-.library-inner h1 {
-  font-size: 42px;
-  font-size: 2.625rem;
-  color: #fff; }
-
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -2451,3 +2454,109 @@ h2.subhead-middle {
     background: #000;
     border: 0 none;
     z-index: 100; }
+
+.hidden {
+  visibility: hidden; }
+
+.reveal {
+  opacity: 0;
+  transform: matrix3d(0.8, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; }
+  .reveal.animated {
+    visibility: visible;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; }
+
+.deepness .ligature {
+  letter-spacing: 7px; }
+
+.deepness .subhead {
+  font-size: 44px;
+  font-size: 2.75rem;
+  padding-top: 1.875rem;
+  padding-bottom: 3.75rem; }
+
+.deepness .news--article-container {
+  padding-left: 28px; }
+
+.deepness .news--article {
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 50%;
+  padding: 40px 40px 400px 0;
+  position: relative; }
+  .deepness .news--article:last-child {
+    margin-right: 0; }
+  .deepness .news--article .deepness-img {
+    width: 90%;
+    background-size: cover;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    background-position: 50%;
+    height: 275px; }
+  .deepness .news--article .library--featured-text {
+    position: relative;
+    top: 265px; }
+  .deepness .news--article h2 {
+    padding-right: 32px;
+    line-height: 38px;
+    line-height: 2.375rem;
+    margin-bottom: 3.75rem;
+    position: relative;
+    top: 1.25rem;
+    color: #28ace2; }
+
+.deepness .library--author {
+  border: 1px solid;
+  display: inline-block;
+  right: 20px;
+  top: 7px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 6px 0px 6px;
+  text-align: center;
+  width: 56px;
+  position: absolute;
+  margin: 0;
+  color: #eff4ff; }
+  .deepness .library--author .work-item-date-month {
+    font-size: 16px;
+    font-size: 1rem;
+    text-transform: uppercase; }
+  .deepness .library--author .work-item-date-day {
+    font-size: 23px;
+    font-size: 1.4375rem;
+    line-height: 32px;
+    line-height: 2rem; }
+
+.deepness .deepness--date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: 15px;
+  margin-right: 0;
+  padding: 7px;
+  text-align: center;
+  width: 54px; }
+  .deepness .deepness--date .deepness--date-month {
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    display: block; }
+
+.deepness .deepness-item {
+  padding-left: 28px; }
+  .deepness .deepness-item .library--author {
+    position: relative;
+    margin-top: 1.25rem;
+    margin-bottom: 5rem; }
+  .deepness .deepness-item picture img {
+    width: 100%;
+    height: auto; }

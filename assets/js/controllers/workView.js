@@ -65,30 +65,31 @@ return {
         $rootScope.categoryName = "Corporate";
     };
 
+
+    var config = {
+  //      easing: 'hustle',
+  //      reset:  false,
+  //      delay:  'onload',
+        vFactor: 0.40
+      }
+
     $scope.PostsByTypeAndSlug.$promise.then(function (response) {
       $scope.posts = response;
-      //console.log('ok promise loaded');
     });
 
+    $scope.animateElementIn = function($el) {
+        $el.removeClass('hidden');
+        $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+      };
 
-  $scope.getIframeSrc = function (videoId) {
-    return 'https://player.vimeo.com/video/' + videoId;
-  };
+      $scope.animateElementOut = function($el) {
+        $el.addClass('hidden');
+        $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+      };
 
-    // $scope.clickedNext = function(){
-    //   getElement.setValue('next');
-    //   //console.log('previous clicked', $location.$$path);
-    // }
-    //
-    // $scope.clickedPrevious = function(){
-    //   getElement.setValue('previous');
-    //   //console.log('previous clicked', $location.$$path);
-    // }
-    //
-    // $scope.clickedClose = function(){
-    //   getElement.setValue('close');
-    //   //console.log('close clicked', $rootScope.$state.$current.path[0].url.prefix);
-    // };
+    $scope.getIframeSrc = function (videoId) {
+      return 'https://player.vimeo.com/video/' + videoId;
+    };
 
     $(window).scroll(function() {
     var scroll = $(window).scrollTop();
@@ -99,17 +100,11 @@ return {
     }
     });
 
-    var config = {
-  //      easing: 'hustle',
-  //      reset:  false,
-  //      delay:  'onload',
-        vFactor: 0.40
-      }
 
     //$rootScope.$watch('viewContentLoaded', function(event) {
     $scope.$watch('viewContentLoaded', function(event) {
       $timeout(function() {
-        window.sr = ScrollReveal(config).reveal('.news--featured--article');
+  //      window.sr = ScrollReveal(config).reveal('.news--featured--article');
       //  sr.sync();
       }, 800);
     });
