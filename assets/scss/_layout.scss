@@ -42,6 +42,7 @@ body {
 
     .page {
       padding-top: calculateRem(70px);
+      overflow: hidden;
       .home & {
         padding-top: 0;
       }

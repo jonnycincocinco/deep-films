@@ -38,7 +38,6 @@ return {
 
     $rootScope.$state = $state;
 
-    $rootScope.bodylayout = 'work inner-page';
 
     $scope.posts = [];
 
@@ -48,7 +47,8 @@ return {
   //     $scope.posts = response;
   //   });
 
-    $rootScope.bodylayout = 'work';
+  $rootScope.bodylayout = 'work inner-page';
+
       if ($state.current.activetab == 'demos') {
           $rootScope.bodylayout = 'work inner-page demos';
       }

@@ -2,9 +2,6 @@
 
 .contact--map-container {
     @include span-columns(12 of 12);
-    @include breakpoint(tablet) {
-        @include span-columns(6 of 12);
-    }
     @include breakpoint(desktop) {
         margin-top: 50px;
     }
@@ -15,7 +12,7 @@
     float: left;
     margin-bottom: 20px;
     @include breakpoint(desktop) {
-        width: 440px;
+  //      width: 440px;
         float: none;
         @include horz-align(relative);
     }
@@ -25,7 +22,7 @@
     @include fill-parent();
     height: 320px;
     @include breakpoint(desktop) {
-        height: 440px;
+        height: 640px;
     }
 }
 

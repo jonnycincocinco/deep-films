@@ -38,7 +38,7 @@
     text-align: -3000px;
   }
   </style>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQVmHR83Txf1C6921cH5UlNb9YhnuPz9o&libraries=places"></script>
   <?php wp_head();?>
   <script src="https://cdn.jsdelivr.net/jquery.slick/latest/slick.min.js"></script>
 
