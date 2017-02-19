@@ -24,7 +24,7 @@ return {
 };
 })
 
-.controller('workView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsByTypeAndSlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsByTypeAndSlug, $sce, $timeout, Socialshare){
+.controller('workItemView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsByTypeAndSlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsByTypeAndSlug, $sce, $timeout, Socialshare){
     'use strict';
 
     $scope.loadedContent = 0;
@@ -38,40 +38,11 @@ return {
 
     $rootScope.$state = $state;
 
-    $rootScope.bodylayout = 'work inner-page';
+    $rootScope.bodylayout = 'work-item inner-page';
 
     $scope.posts = [];
 
     $scope.PostsByTypeAndSlug = PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams);
-
-  //   PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams,function(response){
-  //     $scope.posts = response;
-  //   });
-
-    $rootScope.bodylayout = 'work';
-      if ($state.current.activetab == 'demos') {
-          $rootScope.bodylayout = 'work inner-page demos';
-      }
-      if ($state.current.activetab == 'corporate') {
-          $rootScope.bodylayout = 'work inner-page corporate';
-      }
-      if ($state.current.activetab == 'branded-content') {
-          $rootScope.bodylayout = 'work inner-page branded-content';
-      }
-
-    $rootScope.toggleHiddenNav = function(){
-      $rootScope.showMenu = !$rootScope.showMenu;
-      $rootScope.navOpen = $rootScope.showMenu?"open":"";
-    };
-
-    $rootScope.categoryName = "Filter By Category";
-    if ($state.current.activetab == 'branded-content') {
-      $rootScope.categoryName = "Branded Content";
-    } else if ($state.current.activetab == 'demos') {
-        $rootScope.categoryName = "Demos";
-    } else if ($state.current.activetab == 'corporate') {
-        $rootScope.categoryName = "Corporate";
-    };
 
 
     $scope.PostsByTypeAndSlug.$promise.then(function (response) {

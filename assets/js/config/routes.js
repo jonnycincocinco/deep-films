@@ -34,7 +34,7 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
     .state('work-item',
         {
             url: '/work/:slug',
-            controller: 'workView',
+            controller: 'workItemView',
             templateUrl: ajaxInfo.template_directory + '/templates/work-item.html',
             activetab: 'work'
         }

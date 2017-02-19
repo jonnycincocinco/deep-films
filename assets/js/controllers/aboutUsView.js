@@ -3,7 +3,7 @@ angular.module('Deepfilms.controllers')
 .controller('aboutUsView', ['getElement', '$scope', '$rootScope', '$state', 'PostsByType', function (getElement, $scope, $rootScope, $state, PostsByType) {
     'use strict';
 
-    $rootScope.bodylayout = 'about not-work';
+    $rootScope.bodylayout = 'about not-work inner-page';
 
     // input comma-adder
       $('input.number').keyup(function(event) {

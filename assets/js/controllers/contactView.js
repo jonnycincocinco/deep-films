@@ -5,7 +5,7 @@ angular.module('Deepfilms.controllers')
 
     $rootScope.$state = $state;
 
-    $rootScope.bodylayout = 'contact not-work';
+    $rootScope.bodylayout = 'contact not-work inner-page';
 
 
     var startAnimations = function(){

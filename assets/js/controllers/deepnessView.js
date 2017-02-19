@@ -37,7 +37,7 @@ return {
 
     $rootScope.$state = $state;
 
-    $rootScope.bodylayout = 'deepness not-work';
+    $rootScope.bodylayout = 'deepness not-work inner-page';
     $scope.posts = [];
 
 
@@ -46,6 +46,17 @@ return {
     // PostsByTypeAndSlug.getPostsByTypeAndSlug('expertise').query($stateParams,function(response){
     //     $scope.posts = response;
     // });
+
+    $scope.animateElementIn = function($el) {
+      console.log('in');
+        $el.removeClass('hidden');
+        $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+      };
+
+      $scope.animateElementOut = function($el) {
+        $el.addClass('hidden');
+        $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+      };
 
     $scope.PostsByTypeAndSlug.$promise.then(function (response) {
       $scope.posts = response;
@@ -59,21 +70,6 @@ return {
         response[i].acf.date = newDate;
       }
     });
-
-    $scope.clickedNext = function(){
-      getElement.setValue('next');
-      //console.log('previous clicked', $location.$$path);
-    }
-
-    $scope.clickedPrevious = function(){
-      getElement.setValue('previous');
-      //console.log('previous clicked', $location.$$path);
-    }
-
-    $scope.clickedClose = function(){
-      getElement.setValue('close');
-      //console.log('close clicked', $rootScope.$state.$current.path[0].url.prefix);
-    };
 
 
 }]);

@@ -13,7 +13,7 @@
 		<div class="container">
 			<div class="grid">
 				<div class="grid__item copyright text-align-center">
-					<p>&copy; Deepfilms 2017</p>
+					<p>&copy; Deep Films 2017</p>
 				</div>
 	</footer>
 </body>

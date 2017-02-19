@@ -5,45 +5,49 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background: $base--headerColor;
-//    height: 70px;
     min-width: $min-width;
     z-index: 1000;
     color: #fff;
-    .home & {
-      background: none;
-      border: none;
-    }
 }
 
 .desktop-nav {
   @include fill-parent();
   float: left;
   clear: both;
-  border-bottom: 10px solid $color--magenta;
-  transition: all 150ms ease-in-out;
   position: relative;
   top: 0;
-  .home & {
-    border: none;
+  .inner-page & {
+    border-bottom: 10px solid $color--magenta;
+    transition: all 150ms ease-in-out;
+    background: $base--headerColor;
   }
-  &.shorter {
-    top: -120px;
+  .shorter & {
+    -webkit-transform: translate3d(0,-120px,0);
+    transform: translate3d(0,-120px,0);
+    -webkit-transition: -webkit-transform .35s;
+    transition: transform .35s;
   }
   &:after {
   content: " ";
   position: absolute;
   width: 100%;
-  height: 60px;
   background: $color--justBlue;
   bottom: -70px;
   transition: all 150ms linear;
-  .not-work & {
-    height: 23px;
-    bottom: -33px;
+  display: none;
+  height: 0;
+  .inner-page & {
+    height: 60px;
+    display: block;
+  }
+  .not-work &,
+  .work-item & {
+      height: 23px;
+      bottom: -33px;
     }
-    .home & {
-      height: 0;
+    .shorter & {
+      height: 34px;
+      top: 128px;
     }
   }
 }
@@ -302,6 +306,12 @@ button.cta {
   }
 }
 
+.all-work {
+  display: none;
+  .work-item & {
+    display: inline-block;
+  }
+}
 .categorybar {
   display: none;
   //background: $color--justBlue;
@@ -316,9 +326,12 @@ button.cta {
   }
   @include font-size(14);
   @extend %circular-univers;
-  &.shorter {
-    padding: 0 10px;
-    top: -120px;
+  .shorter & {
+      -webkit-transform: translate3d(0,-115px,0);
+      transform: translate3d(0,-115px,0);
+      -webkit-transition: -webkit-transform .35s;
+      transition: transform .35s;
+      padding: 0 10px;
     .dropdown-inner {
       top: 18px;
     }

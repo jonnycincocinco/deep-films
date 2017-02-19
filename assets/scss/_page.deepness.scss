@@ -99,3 +99,14 @@
       }
     }
 }
+
+.copy-section {
+  .container {
+    background: $color--lightestBlue;
+    padding-top: calculateRem(200px);
+    margin-top: calculateRem(-200px);
+    p {
+      color: $color--deepBlue;
+    }
+  }
+}
