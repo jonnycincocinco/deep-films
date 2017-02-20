@@ -2359,7 +2359,7 @@ h2.subhead-middle {
         .work--container .news--featured--article.featured-follow:last-child {
           margin-right: 0; }
         .work--container .news--featured--article.featured-follow:nth-of-type(odd) {
-          padding: 2px 10px; }
+          padding: 1px 10px; }
         .corporate .work--container .news--featured--article.featured-follow:nth-child(2),
         .branded-content .work--container .news--featured--article.featured-follow:nth-child(2) {
           float: left;

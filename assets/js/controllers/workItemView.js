@@ -24,7 +24,7 @@ return {
 };
 })
 
-.controller('workItemView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsByTypeAndSlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsByTypeAndSlug, $sce, $timeout, Socialshare){
+.controller('workItemView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsBySlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsBySlug, $sce, $timeout, Socialshare){
     'use strict';
 
     $scope.loadedContent = 0;
@@ -42,10 +42,10 @@ return {
 
     $scope.posts = [];
 
-    $scope.PostsByTypeAndSlug = PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams);
+    $scope.PostsBySlug = PostsBySlug.getPostsBySlug('pages').query($stateParams);
 
 
-    $scope.PostsByTypeAndSlug.$promise.then(function (response) {
+    $scope.PostsBySlug.$promise.then(function (response) {
       $scope.posts = response;
     });
 

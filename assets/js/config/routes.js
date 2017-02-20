@@ -4,8 +4,8 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
     $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads.
         'self',
-        'https://player.vimeo.com/video/*'
-
+        'https://player.vimeo.com/video/*',
+        'http://dev.deepfilms.co/**/*'
     ]);
 
 
@@ -88,7 +88,7 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
     .state('deepness-item',
         {
             url: '/deepness/:slug',
-            controller: 'deepnessView',
+            controller: 'deepnessItemView',
             templateUrl: ajaxInfo.template_directory + '/templates/deepness-item.html',
             activetab: 'deepness'
         }

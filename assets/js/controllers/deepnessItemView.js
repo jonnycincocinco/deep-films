@@ -22,7 +22,7 @@ return {
 };
 })
 
-.controller('deepnessView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsByTypeAndSlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsByTypeAndSlug, $sce, $timeout, Socialshare){
+.controller('deepnessItemView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsBySlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsBySlug, $sce, $timeout, Socialshare){
     'use strict';
 
     $scope.loadedContent = 0;
@@ -41,7 +41,7 @@ return {
     $scope.posts = [];
 
 
-    $scope.PostsByTypeAndSlug = PostsByTypeAndSlug.getPostsByTypeAndSlug('posts').query($stateParams);
+    $scope.PostsBySlug = PostsBySlug.getPostsBySlug('posts').query($stateParams);
 
     // PostsByTypeAndSlug.getPostsByTypeAndSlug('expertise').query($stateParams,function(response){
     //     $scope.posts = response;
@@ -58,7 +58,7 @@ return {
         $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
       };
 
-    $scope.PostsByTypeAndSlug.$promise.then(function (response) {
+    $scope.PostsBySlug.$promise.then(function (response) {
       $scope.posts = response;
       for (var i = 0; i < response.length; i++) {
         var newDate = response[i].acf.date;

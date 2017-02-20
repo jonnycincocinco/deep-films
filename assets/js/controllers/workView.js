@@ -41,7 +41,7 @@ return {
 
     $scope.posts = [];
 
-    $scope.PostsByTypeAndSlug = PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams);
+    $scope.PostsByTypeAndSlug = PostsByTypeAndSlug.getPostsByTypeAndSlug('pages').query($stateParams);
 
   //   PostsByTypeAndSlug.getPostsByTypeAndSlug('work').query($stateParams,function(response){
   //     $scope.posts = response;
