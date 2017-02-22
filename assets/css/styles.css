@@ -1178,8 +1178,9 @@ button.cta.desktop-nav--cta {
   background-size: 100%;
   text-indent: -9999px;
   z-index: 100; }
-  .home .desktop-nav--logo {
-    display: none; }
+  .home .desktop-nav--logo,
+  .home-inner .desktop-nav--logo {
+    visibility: hidden; }
   @media only screen and (min-width: 1024px) {
     .desktop-nav--logo {
       margin: 1.75rem 0; } }
@@ -1465,7 +1466,8 @@ button.cta.desktop-nav--cta {
       .site-footer .grid__item.copyright:last-child {
         margin-right: 0; }
       .site-footer .grid__item.copyright p {
-        text-align: center; }
+        text-align: center;
+        color: #8db9ff; }
   .site-footer .site-footer-list {
     list-style: none;
     margin: 0 0 1.25rem;
@@ -1602,10 +1604,12 @@ button.cta.desktop-nav--cta {
 .slick-dots {
   position: absolute;
   bottom: 45px;
+  height: 50px;
   list-style: none;
   display: block;
   text-align: center;
   padding: 0;
+  margin: 0;
   width: 100%;
   z-index: 111; }
   .slick-dots li {
@@ -1637,11 +1641,10 @@ button.cta.desktop-nav--cta {
         top: 0;
         left: 0;
         content: " ";
-        width: 18px;
-        height: 18px;
-        border: 1px;
-        border: 1px solid white;
-        border-radius: 18px;
+        width: 23px;
+        height: 23px;
+        border: 2px solid white;
+        border-radius: 23px;
         font-family: "slick";
         font-size: 32px;
         line-height: 18px;
@@ -1653,6 +1656,18 @@ button.cta.desktop-nav--cta {
     .slick-dots li.slick-active button:before {
       color: black;
       opacity: 0.75; }
+    .slick-dots li:nth-child(1) button:before {
+      border-color: #F5FA16;
+      background: #F5FA16; }
+    .slick-dots li:nth-child(2) button:before {
+      border-color: #EF0A80;
+      background: #EF0A80; }
+    .slick-dots li:nth-child(3) button:before {
+      border-color: #28ace2;
+      background: #28ace2; }
+    .slick-dots li:nth-child(4) button:before {
+      border-color: #F5FA16;
+      background: #F5FA16; }
 
 .carousel-navigation.mobile-carousel {
   display: none; }
@@ -2175,7 +2190,11 @@ h2.subhead-middle {
 .home-list--social {
   position: fixed;
   bottom: 0;
-  right: 10px;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  padding: 20px 20px 10px;
+  background: #100c3c;
   z-index: 11;
   opacity: 0;
   transition: all 200ms linear; }
@@ -2192,11 +2211,11 @@ h2.subhead-middle {
   font-size: 14px;
   font-size: .77778rem;
   line-height: 2;
-  height: 1.61111rem;
+  height: 2rem;
+  width: 2rem;
   margin: 0 0.3125rem;
   text-indent: -999em;
-  overflow: hidden;
-  width: 1.61111rem; }
+  overflow: hidden; }
   .home-list__icon.site-footer-list__icon--facebook {
     background-image: url("../images/icons/icon-facebook.png"); }
   .home-list__icon.site-footer-list__icon--twitter {
@@ -2209,13 +2228,21 @@ h2.subhead-middle {
   width: 100%;
   position: absolute; }
 
-.about-us--container .section-strip.border-top {
+.about-us--container .grid__item {
+  padding-left: 0.875rem; }
+
+.about-us--container .section-strip {
   padding-top: 5rem;
-  margin-top: 3.125rem;
-  border-top: 1px solid #ddd; }
+  padding-bottom: 1.25rem; }
+
+.about-us--container h1 {
+  margin-bottom: 2.5rem; }
 
 .about-us--container .icon-text {
   border-top: 1px; }
+
+.about-us--container p {
+  text-align: justify; }
 
 .about-team .title {
   font-weight: 800;
@@ -2224,9 +2251,6 @@ h2.subhead-middle {
 
 .about-team .icon-text-col__item .grid__item h2 {
   color: #298fff; }
-
-.about-team .icon-text-col__item .grid__item p {
-  text-align: justify; }
 
 @media only screen and (min-width: 768px) {
   .about-team .icon-text-col__item .grid__item .icon-text-col__icon {
@@ -2276,7 +2300,8 @@ h2.subhead-middle {
   padding: 0 26px 0 0; }
 
 .about .opening .icon-text-col__text {
-  padding: 0 7.5rem; }
+  padding-left: 0;
+  padding-right: 7.5rem; }
 
 .work--container .inner-hero.bg-strip {
   padding-top: 5rem;

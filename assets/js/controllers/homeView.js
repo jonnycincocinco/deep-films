@@ -9,11 +9,11 @@ angular.module('Deepfilms.controllers')
 
     var slider = $('.slider').slick({
     autoplay: true,
-    autoplaySpeed: 14000,
+    autoplaySpeed: 13000,
     dots: true,
     arrows: false,
     infinite: false,
-    speed: 250,
+    speed: 640,
     fade: true,
     pauseOnHover: false,
     slide: 'div'

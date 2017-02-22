@@ -184,8 +184,9 @@ button.cta {
   background-size: 100%;
   text-indent: -9999px;
   z-index: 100;
-  .home & {
-    display: none;
+  .home &,
+  .home-inner & {
+    visibility: hidden;
   }
   @include breakpoint(tablet) {
 //    margin-top: calculateRem(20px);

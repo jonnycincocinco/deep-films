@@ -104,7 +104,11 @@ h2 {
 .home-list--social {
   position: fixed;
   bottom: 0;
-  right: 10px;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  padding: 20px 20px 10px;
+  background: $color--deeperBlue;
   z-index: 11;
   opacity: 0;
   transition: all 200ms linear;
@@ -122,11 +126,11 @@ h2 {
   font-size: 14px;
   font-size: .77778rem;
   line-height: 2;
-  height: 1.61111rem;
+  height: calculateRem(32px);
+  width: calculateRem(32px);
   margin: 0 calculateRem(5px);
   text-indent: -999em;
   overflow: hidden;
-  width: 1.61111rem;
   &.site-footer-list__icon--facebook {
     background-image: url('../images/icons/icon-facebook.png');
   }

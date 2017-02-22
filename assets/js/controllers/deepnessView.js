@@ -48,7 +48,6 @@ return {
     // });
 
     $scope.animateElementIn = function($el) {
-      console.log('in');
         $el.removeClass('hidden');
         $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
       };
@@ -57,6 +56,15 @@ return {
         $el.addClass('hidden');
         $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
       };
+
+      $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      if (scroll >= 100) {
+          $("header").addClass("shorter");
+      } else {
+          $("header").removeClass("shorter");
+      }
+      });
 
     $scope.PostsByTypeAndSlug.$promise.then(function (response) {
       $scope.posts = response;

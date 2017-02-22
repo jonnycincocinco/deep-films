@@ -1,16 +1,21 @@
 //  ## ABOUT US  ----------------------------------------------------------//
 
 .about-us--container {
-
+  .grid__item {
+    padding-left: calculateRem(14px);
+  }
   .section-strip {
-    &.border-top {
-      padding-top: calculateRem(80px);
-      margin-top: calculateRem(50px);
-      border-top: 1px solid #ddd;
-    }
+    padding-top: calculateRem(80px);
+    padding-bottom: calculateRem(20px);
+  }
+  h1 {
+    margin-bottom: calculateRem(40px);
   }
   .icon-text {
     border-top: 1px;
+  }
+  p {
+    text-align: justify;
   }
 }
 
@@ -29,9 +34,7 @@
       h2 {
         color: $color--justBlue;
       }
-      p {
-        text-align: justify;
-      }
+
       .icon-text-col__icon {
         @include breakpoint(tablet){
           @include span-columns(4 of 12);
@@ -84,7 +87,8 @@
 .opening {
   .about & {
     .icon-text-col__text {
-      padding: 0 calculateRem(120px);
+      padding-left: 0;
+      padding-right: calculateRem(120px);
     }
   }
 }

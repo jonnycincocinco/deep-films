@@ -37,6 +37,7 @@
       @include span-columns(12 of 12);
       p {
         text-align: center;
+        color: $color--lightBlue;
       }
     }
   }

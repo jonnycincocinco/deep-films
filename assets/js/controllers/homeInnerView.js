@@ -5,7 +5,7 @@ angular.module('Deepfilms.controllers')
 
     $rootScope.$state = $state;
 
-    $rootScope.bodylayout = 'home';
+    $rootScope.bodylayout = 'home-inner not-work inner-page';
 
     $rootScope.socialActive = 'active';
 

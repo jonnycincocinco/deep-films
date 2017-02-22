@@ -3,6 +3,15 @@ angular.module('Deepfilms.controllers')
 .controller('aboutUsView', ['getElement', '$scope', '$rootScope', '$state', 'PostsByType', function (getElement, $scope, $rootScope, $state, PostsByType) {
     'use strict';
 
+    $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 100) {
+        $("header").addClass("shorter");
+    } else {
+        $("header").removeClass("shorter");
+    }
+    });
+    
     $rootScope.bodylayout = 'about not-work inner-page';
 
     // input comma-adder

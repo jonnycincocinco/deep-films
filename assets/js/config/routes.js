@@ -27,7 +27,7 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
             url: '/home',
             controller: 'homeInnerView',
             templateUrl: ajaxInfo.template_directory + '/templates/home-inner.html',
-            activetab: 'home'
+            activetab: 'home-inner'
         }
     )
 
