@@ -2100,7 +2100,7 @@ button.cta,
     float: none;
     margin: auto; }
 
-body.home {
+body.home, body.home-inner {
   position: fixed;
   max-height: 100vh;
   overflow: hidden; }
@@ -2129,12 +2129,12 @@ body.home {
   .page-home--hero .video-background video {
     height: auto;
     width: auto;
-    position: fixed;
+    position: absolute;
     min-width: 100vw;
     min-height: 100vh; }
 
 .page-home--hero .img-slide {
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   bottom: 0;
@@ -2166,6 +2166,20 @@ body.home {
   width: 100vw;
   height: 100vh;
   background-image: url(/wp-content/themes/deep-2017/build/images/pages/mtn-logo.jpg); }
+
+.page-home--hero .slide-interstitial {
+  width: 100vw;
+  height: 100vh;
+  background: #000; }
+
+.page-home--hero .home-background {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 11; }
+  .page-home--hero .home-background.active {
+    opacity: 1;
+    visibility: visible; }
 
 h2.subhead {
   font-size: 85px;

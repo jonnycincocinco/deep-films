@@ -10,11 +10,13 @@ angular.module('Deepfilms.controllers')
     var slider = $('.slider').slick({
     autoplay: true,
     autoplaySpeed: 13000,
+    slidesToShow: 1,
+    slidesToScroll: 2,
     dots: true,
     arrows: false,
     infinite: false,
     speed: 640,
-    fade: true,
+    fade: false,
     pauseOnHover: false,
     slide: 'div'
   //  cssEase: 'linear'
@@ -28,7 +30,7 @@ angular.module('Deepfilms.controllers')
           slick.dots = false;
           slick.paused = true;
           slider.slick('unslick');
-          $('.home-list--social').addClass('active');
+          $('.home-list--social,.home-background').addClass('active');
         }
       });
 
