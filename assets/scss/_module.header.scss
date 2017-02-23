@@ -21,11 +21,16 @@ header {
     transition: all 150ms ease-in-out;
     background: $base--headerColor;
   }
+  .mobile-open & {
+    border: none;
+  }
   .shorter & {
-    -webkit-transform: translate3d(0,-120px,0);
-    transform: translate3d(0,-120px,0);
-    -webkit-transition: -webkit-transform .35s;
-    transition: transform .35s;
+      @include breakpoint(desktop) {
+      -webkit-transform: translate3d(0,-120px,0);
+      transform: translate3d(0,-120px,0);
+      -webkit-transition: -webkit-transform .35s;
+      transition: transform .35s;
+    }
   }
   &:after {
   content: " ";
@@ -40,14 +45,19 @@ header {
     height: 60px;
     display: block;
   }
+  .mobile-open & {
+    display: none;
+  }
   .not-work &,
   .work-item & {
       height: 23px;
       bottom: -33px;
     }
     .shorter & {
-      height: 34px;
-      top: 128px;
+      @include breakpoint(desktop) {
+        height: 34px;
+        top: 128px;
+      }
     }
   }
 }
@@ -56,7 +66,7 @@ header {
   position: relative;
   width: 38px;
   height: 22px;
-  margin: 24px 0 0 24px;
+  margin: 32px 0 0 24px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -101,7 +111,7 @@ header {
   }
   &.open {
     span {
-      background: #000;
+      //background: #000;
       &:nth-child(1) {
         top: 7px;
         width: 0%;
@@ -181,15 +191,16 @@ button.cta {
   width: 156px;
   height: 63px;
   background: url('../images/global/deep-films-logo.png') no-repeat 0 0;
-  background-size: 100%;
+  background-size: 75%;
   text-indent: -9999px;
   z-index: 100;
   .home &,
-  .home-inner & {
+  .home-inner &,
+  .mobile-open & {
     visibility: hidden;
   }
   @include breakpoint(tablet) {
-//    margin-top: calculateRem(20px);
+    background-size: 100%;
   }
   @include breakpoint(desktop) {
     margin: calculateRem(28px) 0;
@@ -208,6 +219,8 @@ button.cta {
   visibility: hidden;
   z-index: 500;
   background: $base--headerColor;
+  @extend %circular-univers;
+
   @include transition(opacity 0.3s, visibility 0s 0.5s);
   display: block;
   @include breakpoint(desktop) {
@@ -246,21 +259,14 @@ button.cta {
   padding: 0 0 0 25%;
 //  text-transform: uppercase;
   li {
-    @include font-size(22);
-    margin-bottom: 12px;
+    @include font-size(43);
+    margin-bottom: calculateRem(32px);
     font-weight: 500;
     @media only screen and (-webkit-min-device-pixel-ratio : 2)
     and (device-aspect-ratio: 2/3)
     and (orientation : portrait) {
       @include font-size(24);
       margin-bottom: 20px;
-    }
-    .mobile-nav--main__sub {
-      padding-left: 11%;
-      margin: 16px 0 0;
-      li {
-        list-style: square;
-      }
     }
   }
 }
@@ -322,52 +328,56 @@ button.cta {
   position: relative;
   transition: all 150ms ease-in-out;
   overflow: hidden;
+  @include font-size(14);
+  @extend %circular-univers;
   &:hover {
     overflow: visible;
   }
-  @include font-size(14);
-  @extend %circular-univers;
   .shorter & {
-      -webkit-transform: translate3d(0,-115px,0);
-      transform: translate3d(0,-115px,0);
-      -webkit-transition: -webkit-transform .35s;
-      transition: transform .35s;
-      padding: 0 10px;
-    .dropdown-inner {
-      top: 18px;
-    }
-    button {
-      border-top: 2px solid $color--yellow;
-      min-width: 120px;
-      &:after {
-        top: -6px;
-        right: -32px;
+      @include breakpoint(desktop) {
+        -webkit-transform: translate3d(0,-115px,0);
+        transform: translate3d(0,-115px,0);
+        -webkit-transition: -webkit-transform .35s;
+        transition: transform .35s;
+        padding: 0 10px;
+      .dropdown-inner {
+        top: 18px;
       }
-      span {
-        display: none;
+      button {
+        border-top: 2px solid $color--yellow;
+        min-width: 120px;
+        &:after {
+          top: -6px;
+          right: -32px;
+        }
+        span {
+          display: none;
+        }
       }
     }
   }
   .work & {
     display: inline-block;
   }
+  .mobile-open & {
+    display: none;
+  }
   .dropdown-toggle {
     position: relative;
     display: inline-block;
     &:hover {
-        .dropdown-inner {
-          opacity: 1;
-          transform: translateY(0);
-          visibility: visible;
-          li {
-            a {
-              opacity: 1;
-              -webkit-transform: translateY(0);
-              transform: translateY(0);
-            }
+      .dropdown-inner {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        li {
+          a {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
           }
         }
-
+      }
     }
   }
   button {
@@ -399,6 +409,9 @@ button.cta {
     min-width: 170px;
     background: $color--mediumBlue;
     box-shadow: 17px 13px 47px -6px rgba(0,0,0,.75);
+    &.closed {
+      opacity: 0 !important;
+    }
     &.open {
       display: block;
     }

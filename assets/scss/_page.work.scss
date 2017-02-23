@@ -171,8 +171,12 @@
     }
     &.solo-work {
       h2 {
-        @include font-size(90);
-        @include line-height(100);
+        @include font-size(60);
+        @include line-height(80);
+        @include breakpoint(tablet) {
+          @include font-size(90);
+          @include line-height(100);
+        }
         color: $color--lightBlue;
       }
     }

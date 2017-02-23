@@ -109,6 +109,7 @@ var app;
             _cache.mobileNav = $('.mobile-nav');
             _cache.mobileNavLinks = $('.mobile-nav--main li > a');
             _cache.logoMain = $('.desktop-nav--logo');
+            _cache.header = $('header');
         },
 
         // add events
@@ -191,6 +192,7 @@ var app;
             _cache.bodyEl.addClass('overlay--open');
             _cache.mobileMenuToggle.addClass('open');
             _cache.mobileNav.addClass('open');
+            _cache.header.addClass('mobile-open');
             $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         },
@@ -203,6 +205,7 @@ var app;
                 _cache.bodyEl.removeClass('overlay--open');
                 _cache.mobileMenuToggle.removeClass('open');
                 _cache.mobileNav.removeClass('open');
+                _cache.header.removeClass('mobile-open');
             }, 400);
 
         };

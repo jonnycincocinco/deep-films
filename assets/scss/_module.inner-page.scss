@@ -7,9 +7,12 @@
 }
 
 .section-strip {
-    padding-top: calculateRem(80px);
-    padding-bottom: calculateRem(80px);
-
+    padding-top: calculateRem(40px);
+    padding-bottom: calculateRem(40px);
+    @include breakpoint(tablet) {
+      padding-top: calculateRem(80px);
+      padding-bottom: calculateRem(80px);
+    }
     &.flush-bottom {
       padding-bottom: 0;
     }
@@ -19,7 +22,10 @@
     }
     &.inner-hero {
       position: relative;
-      top: calculateRem(80px);
+      top: calculateRem(30px);
+      @include breakpoint(tablet) {
+        top: calculateRem(80px);
+      }
     }
 }
 

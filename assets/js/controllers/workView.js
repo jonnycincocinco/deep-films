@@ -59,6 +59,14 @@ return {
           $rootScope.bodylayout = 'work inner-page branded-content';
       }
 
+    $('.filter-list').click(function(){
+      $('.dropdown-inner').addClass('closed');
+    });
+
+    $('.toggle').hover(function(){
+      $('.dropdown-inner').removeClass('closed');
+    });
+
     $rootScope.toggleHiddenNav = function(){
       $rootScope.showMenu = !$rootScope.showMenu;
       $rootScope.navOpen = $rootScope.showMenu?"open":"";

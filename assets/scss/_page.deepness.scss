@@ -6,17 +6,23 @@
   }
   .subhead {
     @extend %circular-univers-ultra;
-    @include font-size(44);
+    @include font-size(32);
     padding-top: calculateRem(30px);
     padding-bottom: calculateRem(60px);
+    @include breakpoint(tablet) {
+      @include font-size(44);
+    }
   }
   .news--article-container {
     padding-left: 28px;
   }
     .news--article {
-      @include span-columns(6 of 12);
+      @include span-columns(12 of 12);
       padding: 40px 40px 400px 0;
       position: relative;
+      @include breakpoint(tablet) {
+        @include span-columns(6 of 12);
+      }
       .deepness-img {
         width: 90%;
         background-size: cover;
@@ -85,7 +91,9 @@
       }
     }
     .deepness-item {
-      padding-left: 28px;
+      @include breakpoint(tablet) {
+        padding-left: 28px;
+      }
       .library--author {
         position: relative;
         margin-top: calculateRem(20px);

@@ -86,7 +86,7 @@
           <button class="toggle" ng-click="toggleHiddenNav()">
             <span class="toggle-text">{{categoryName}}</span>
           </button>
-          <div class="dropdown-inner" ng-class="navOpen">
+          <div class="dropdown-inner">
             <ul class="filter-list">
               <li class="">
                 <a ui-sref="work" ng-class="{active: $state.current.activetab == 'work'}" ng-click="toggleHiddenNav()">Featured</a>
@@ -110,19 +110,9 @@
 
 <nav class="mobile-nav">
     <ul class="mobile-nav--main">
-      <li><a ui-sref="services" ng-class="{active: $state.current.activetab == 'services'}">Services</a>
-        <ul class="mobile-nav--main__sub">
-          <li><a ui-sref="earthly-dna" ng-class="{active: $state.current.activetab == 'earthly-dna'}">earthly(DNA)</a></li>
-          <li><a ui-sref="portfolio" ng-class="{active: $state.current.activetab == 'portfolio'}">Portfolio</a></li>
-          <li><a ui-sref="security" ng-class="{active: $state.current.activetab == 'security'}">Security</a></li>
-        </ul>
-      </li>
-      <li><a ui-sref="fees" ng-class="{active: $state.current.activetab == 'fees'}">Fees</a></li>
-      <li><a ui-sref="faqs" ng-class="{active: $state.current.activetab == 'faqs'}">FAQs</a></li>
-      <li><a ui-sref="library" ng-class="{active: $state.current.activetab == 'library'}">Library</a></li>
-      <li><a ui-sref="about-us" ng-class="{active: $state.current.activetab == 'about-us'}">About</a></li>
-      <li>
-        <button class="cta">Sign up</button>
-      </li>
+      <li class=""><a ui-sref="work" ng-class="{active: $state.current.activetab == 'work' || $state.current.activetab == 'demos' || $state.current.activetab == 'branded-content' || $state.current.activetab == 'corporate'}">Work</a></li>
+      <li><a ui-sref="about" ng-class="{active: $state.current.activetab == 'about'}">About</a></li>
+      <li><a ui-sref="deepness" ng-class="{active: $state.current.activetab == 'deepness'}">Deepness</a></li>
+      <li><a ui-sref="contact" ng-class="{active: $state.current.activetab == 'contact'}">Contact</a></li>
     </ul>
 </nav>

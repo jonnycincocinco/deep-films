@@ -22,7 +22,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-dots {
     position: absolute;
-    bottom: 45px;
+    bottom: 65px;
     height: 50px;
     list-style: none;
     display: block;
@@ -31,6 +31,9 @@ $slick-opacity-not-active: 0.25 !default;
     margin: 0;
     width: 100%;
     z-index: 111;
+    @include breakpoint(tablet) {
+      bottom: 45px;
+    }
     li {
         position: relative;
         display: inline-block;

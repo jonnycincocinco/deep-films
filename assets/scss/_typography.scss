@@ -52,12 +52,16 @@ html {
 
 h1 {
   @extend %circular-headline;
-  @include font-size(120);
-  @include line-height(90);
+  @include font-size(100);
+  @include line-height(70);
   margin: 0 0 calculateRem(10px) 0;
   font-weight: 300;
   letter-spacing: 0.02rem;
   color: $color--lightBlue;
+  @include breakpoint(tablet) {
+    @include font-size(120);
+    @include line-height(90);
+  }
 }
 
 h2 {

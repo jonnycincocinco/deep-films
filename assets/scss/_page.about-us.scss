@@ -2,7 +2,9 @@
 
 .about-us--container {
   .grid__item {
-    padding-left: calculateRem(14px);
+    @include breakpoint(desktop) {
+      padding-left: calculateRem(14px);
+    }
   }
   .section-strip {
     padding-top: calculateRem(80px);
@@ -15,7 +17,9 @@
     border-top: 1px;
   }
   p {
-    text-align: justify;
+    @include breakpoint(desktop) {
+      text-align: justify;
+    }
   }
 }
 
@@ -33,6 +37,13 @@
     .grid__item {
       h2 {
         color: $color--justBlue;
+        margin-top: calculateRem(10px);
+        @include breakpoint(tablet){
+          margin-top: 0;
+        }
+        &.text-align-right {
+          text-align: left;
+        }
       }
 
       .icon-text-col__icon {
@@ -66,8 +77,17 @@
             }
           }
         }
+        &.icon_mobile {
+          @include breakpoint(tablet){
+            display: none;
+          }
+        }
         &.icon_right {
-          text-align: right;
+          display: none;
+          @include breakpoint(tablet){
+            text-align: right;
+            display: block;
+          }
         }
       }
       .icon-text-col__text {
@@ -88,7 +108,9 @@
   .about & {
     .icon-text-col__text {
       padding-left: 0;
-      padding-right: calculateRem(120px);
+      @include breakpoint(tablet) {
+        padding-right: calculateRem(120px);
+      }
     }
   }
 }
