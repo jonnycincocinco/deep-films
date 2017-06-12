@@ -3,11 +3,19 @@
 .site-footer {
   padding: calculateRem(40px);
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('/wp-content/themes/deep-2017/build/images/pages/footer.jpg');
   @extend %circular-univers;
   .container {
-    padding-bottom: calculateRem(20px);
+    padding-bottom: calculateRem(40px);
   }
   .grid__item {
+    &.grid__item--logo {
+      padding: 0;
+      margin-right: calculateRem(80px);
+    }
     display: inline-block;
     @include span-columns(12 of 12);
     @include breakpoint(tablet) {
@@ -35,9 +43,11 @@
       @include font-size(12);
       @include line-height(20);
       @include span-columns(12 of 12);
+      position: absolute;
+      right: 60px;
+      bottom: 0;
       p {
-        text-align: center;
-        color: $color--lightBlue;
+        text-align: right;
       }
     }
   }
@@ -47,12 +57,18 @@
     padding: 0;
   }
   .site-footer-list__link {
-    @include font-size(12);
+    @include font-size(16);
     @include line-height(20);
+    color: #fff;
   }
 
+  .site-footer-list--social {
+      position: absolute;
+      right: calculateRem(60px);
+  }
   .site-footer-list--social li {
-    display: inline-block;
+    display: block;
+    margin-bottom: calculateRem(10px);
     cursor: pointer;
   }
   .site-footer-list__icon {
@@ -67,25 +83,25 @@
     text-indent: -999em;
     overflow: hidden;
     width: 1.61111rem;
-    &.site-footer-list__icon--facebook {
-      background: url('../images/svg/icon-social-facebook.svg') 0 0 no-repeat;
+    &.site-footer-list__icon--instagram {
+      background-image: url('../images/icons/icon-instagram.png');
     }
     &.site-footer-list__icon--twitter {
-      background: url('../images/svg/icon-social-twitter.svg') 0 0 no-repeat;
+      background-image: url('../images/icons/icon-twitter.png');
     }
-    &.site-footer-list__icon--linkedin {
-      background: url('../images/svg/icon-social-linkedin.svg') 0 0 no-repeat;
+    &.site-footer-list__icon--facebook {
+      background-image: url('../images/icons/icon-facebook.png');
     }
   }
 
   .site-footer-brand__ident {
-    background: url('../images/global/earthly-hand.png') 0 0 no-repeat;
+    background: url('../images/global/deep-films-logo.png') 0 0 no-repeat;
     display: block;
-    height: calculateRem(90px);
+    height: calculateRem(60px);
     margin: .5rem 0 0;
     text-indent: -999em;
     overflow: hidden;
-    width: calculateRem(90px);
+    width: calculateRem(280px);
     background-size: 50%;
   }
 }

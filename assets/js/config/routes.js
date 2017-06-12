@@ -33,7 +33,7 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
 
     .state('work-item',
         {
-            url: '/work/:slug',
+            url: '/the-goods/:slug',
             controller: 'workItemView',
             templateUrl: ajaxInfo.template_directory + '/templates/work-item.html',
             activetab: 'work'
@@ -42,10 +42,19 @@ window.app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider
 
     .state('work',
         {
-            url: '/work',
+            url: '/the-goods',
             controller: 'workView',
             templateUrl: ajaxInfo.template_directory + '/templates/work.html',
             activetab: 'work'
+        }
+    )
+
+    .state('what-we-do',
+        {
+            url: '/what-we-do',
+            controller: 'whatWeDoView',
+            templateUrl: ajaxInfo.template_directory + '/templates/what-we-do.html',
+            activetab: 'what-we-do'
         }
     )
 

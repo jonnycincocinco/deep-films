@@ -1,0 +1,34 @@
+.what-we-do {
+  .what-we-do--item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+}
+
+.what-we-do {
+  &__header {
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/wwd_header.jpg');
+    padding-top: calculateRem(120px);
+  }
+  &__placement {
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/wwd_placement.jpg')
+  }
+  &__strategy {
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/wwd_strategy.jpg')
+  }
+  &__services {
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/wwd_services.jpg')
+  }
+  &__content {
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/wwd_content.jpg')
+  }
+  .what-we-do__three-col {
+    @include span-columns(12 of 12);
+    @include breakpoint(tablet)
+    @include span-columns(4 of 12);
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

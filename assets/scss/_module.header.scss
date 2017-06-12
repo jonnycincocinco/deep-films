@@ -7,7 +7,7 @@ header {
     left: 0;
     min-width: $min-width;
     z-index: 1000;
-    color: #fff;
+    color: $base--colorWhite;
 }
 
 .desktop-nav {
@@ -17,9 +17,9 @@ header {
   position: relative;
   top: 0;
   .inner-page & {
-    border-bottom: 10px solid $color--magenta;
-    transition: all 150ms ease-in-out;
-    background: $base--headerColor;
+//    border-bottom: 10px solid $color--magenta;
+//    transition: all 150ms ease-in-out;
+  //  background: $base--headerColor;
   }
   .mobile-open & {
     border: none;
@@ -36,11 +36,12 @@ header {
   content: " ";
   position: absolute;
   width: 100%;
-  background: $color--justBlue;
+//  background: $color--justBlue;
   bottom: -70px;
   transition: all 150ms linear;
   display: none;
   height: 0;
+
   .inner-page & {
     height: 60px;
     display: block;
@@ -63,10 +64,11 @@ header {
 }
 .desktop-nav--mobile-toggle {
   float: right;
-  position: relative;
-  width: 38px;
-  height: 22px;
-  margin: 32px 0 0 24px;
+  position: absolute;
+  right: 50px;
+  width: 25px;
+  height: 25px;
+  margin: 23px 0 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -78,7 +80,7 @@ header {
   cursor: pointer;
   z-index: 100;
   @include breakpoint(desktop) {
-      display: none;
+//      display: none;
   }
   span {
     display: block;
@@ -96,21 +98,34 @@ header {
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
+    &:before {
+      content: "";
+      position: absolute;
+      background: #fff;
+      height: 4px;
+      width: 4px;
+      left: -8px;
+      top: 0;
+      border-radius: 100%;
+    }
     &:nth-child(1) {
       top: 0px;
     }
     &:nth-child(2) {
-      top: 7px;
+      top: 10px;
     }
     &:nth-child(3) {
-      top: 7px;
+      top: 10px;
     }
     &:nth-child(4) {
-      top: 14px;
+      top: 20px;
     }
   }
   &.open {
     span {
+      &:before {
+        display: none;
+      }
       //background: #000;
       &:nth-child(1) {
         top: 7px;
@@ -134,6 +149,7 @@ header {
         width: 0%;
         left: 50%;
       }
+
     }
   }
 }
@@ -197,7 +213,7 @@ button.cta {
   .home &,
   .home-inner &,
   .mobile-open & {
-    visibility: hidden;
+  //  visibility: hidden;
   }
   @include breakpoint(tablet) {
     background-size: 100%;
@@ -209,37 +225,34 @@ button.cta {
 }
 
 .mobile-nav {
-  @include fill-parent();
-  float: left;
+  //@include fill-parent();
   position: absolute;
   top: 0;
-  left: 0;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 500;
-  background: $base--headerColor;
-  @extend %circular-univers;
-
+  right: 0;
+  z-index: 1000;
+  @extend %circular-headline;
   @include transition(opacity 0.3s, visibility 0s 0.5s);
   display: block;
+  height: 0;
+  width: 0;
   @include breakpoint(desktop) {
-      display: none;
+//      display: none;
   }
   .mobile-nav-background {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: 400px;
     position: absolute;
     top: 0;
-    right: -100%;
-    background: $base--headerColor;
     display: none;
     opacity: 0;
     @include transition(right 0.3s);
   }
   &.open {
+    width: auto;
+    height: auto;
     opacity: 1;
     visibility: visible;
+    background: #0e76bc;
     @include transition(opacity 0.3s);
     .mobile-nav-background {
       right: 0;
@@ -250,24 +263,42 @@ button.cta {
 }
 
 .mobile-nav--main {
-  @include vertical-align(absolute);
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   text-align: left;
-  padding: 0 0 0 25%;
+  padding-top: 70px;
+  opacity: 0;
+  visibility: hidden;
+  background: #0e76bc;
+  @include breakpoint(desktop) {
+    width: 40vw;
+  }
+  .open & {
+    opacity: 1;
+    visibility: visible;
+  }
+//  padding: 0 0 0 25%;
 //  text-transform: uppercase;
   li {
-    @include font-size(43);
-    margin-bottom: calculateRem(32px);
-    font-weight: 500;
+    padding: 20px 0 18px 25%;
+    @include font-size(32);
+    //margin-bottom: calculateRem(32px);
+    font-weight: 900;
     @media only screen and (-webkit-min-device-pixel-ratio : 2)
     and (device-aspect-ratio: 2/3)
     and (orientation : portrait) {
       @include font-size(24);
       margin-bottom: 20px;
     }
+     &:nth-of-type(odd) {
+      background: #28ace2;
+    }
+     &:last-of-type  {
+       padding: 36px 0;
+      }
   }
 }
 
@@ -322,14 +353,16 @@ button.cta {
 .categorybar {
   display: none;
   //background: $color--justBlue;
-  color: $color--yellow;
+  color: $base--colorWhite;
   width: 100%;
   padding: 18px 10px;
   position: relative;
+  top: 200px;
   transition: all 150ms ease-in-out;
   overflow: hidden;
   @include font-size(14);
   @extend %circular-univers;
+  z-index: 2001;
   &:hover {
     overflow: visible;
   }
@@ -340,11 +373,13 @@ button.cta {
         -webkit-transition: -webkit-transform .35s;
         transition: transform .35s;
         padding: 0 10px;
+        top: 20px;
       .dropdown-inner {
         top: 18px;
       }
       button {
-        border-top: 2px solid $color--yellow;
+        border-top: 2px solid $base--colorWhite;
+        background: none;
         min-width: 120px;
         &:after {
           top: -6px;
@@ -360,7 +395,7 @@ button.cta {
     display: inline-block;
   }
   .mobile-open & {
-    display: none;
+  //  display: none;
   }
   .dropdown-toggle {
     position: relative;
@@ -381,19 +416,20 @@ button.cta {
     }
   }
   button {
-    background: none;
+    background: #0e76bc;
     border: none;
     position: relative;
     min-width: 176px;
     text-align: left;
+    padding: 10px 48px 5px 30px;
     &:after {
       position: absolute;
-      top: 5px;
-      right: 0;
+      top: 12px;
+      right: 16px;
       content: " ";
       width: 10px;
       height: 5px;
-      border-top: solid 10px $color--yellow;
+      border-top: solid 10px $base--colorWhite;
       border-left: solid 10px transparent;
       border-right: solid 10px transparent;
       transform: scale(.6);
@@ -404,10 +440,10 @@ button.cta {
     transform: translateY(8px);
     transition: all .3s cubic-bezier(.22,.61,.36,1);
     position: absolute;
-    top: 26px;
-    left: -13px;
-    min-width: 170px;
-    background: $color--mediumBlue;
+    top: 32px;
+    left: 0;
+    min-width: 196px;
+    background: #0e76bc;
     box-shadow: 17px 13px 47px -6px rgba(0,0,0,.75);
     &.closed {
       opacity: 0 !important;
@@ -418,9 +454,12 @@ button.cta {
   }
   .filter-list {
       padding: 0;
-      margin-bottom: 20px;
+      margin: 0;
     li {
       list-style: none;
+      &:nth-of-type(odd) {
+        background: #28ace2;
+      }
       &:hover {
         a {
           color: #fff;

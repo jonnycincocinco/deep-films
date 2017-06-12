@@ -41,13 +41,13 @@ body {
     z-index: 0;
 
     .page {
-      padding-top: calculateRem(70px);
+  //    padding-top: calculateRem(70px);
       overflow: hidden;
       .home & {
         padding-top: 0;
       }
       .work & {
-        padding-top: calculateRem(140px);
+  //      padding-top: calculateRem(140px);
       }
 
     }

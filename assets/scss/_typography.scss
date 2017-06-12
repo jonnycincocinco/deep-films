@@ -57,19 +57,24 @@ h1 {
   margin: 0 0 calculateRem(10px) 0;
   font-weight: 300;
   letter-spacing: 0.02rem;
-  color: $color--lightBlue;
+//  color: $color--lightBlue;
   @include breakpoint(tablet) {
-    @include font-size(120);
+    @include font-size(110);
     @include line-height(90);
   }
 }
 
 h2 {
   @extend %circular-headline;
-  @include font-size(38);
+  @include font-size(32);
   @include line-height(52);
   margin: 0 0 calculateRem(40px) 0;
   font-weight: 300;
+  .what-we-do--item & {
+    @extend %circular-univers;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
 }
 
 h3 {
@@ -115,9 +120,10 @@ p:first-child {
 
 p {
   @include font-size(16);
-  margin: 0 0 calculateRem(12px);
+  @include line-height(28);
+  margin: 0 0 calculateRem(24px);
   @extend %circular-univers;
-  color: $color--lightestBlue;
+  color: $base--colorWhite;
 }
 
 ul,
@@ -160,7 +166,7 @@ textarea {
 }
 
 a {
-  color: $base--linkColor;
+  color: $base--colorWhite;
   text-decoration: none;
   transition: color 0.3s;
   cursor: pointer;

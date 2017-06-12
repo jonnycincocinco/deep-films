@@ -1,7 +1,11 @@
 //  ## COLORS  ----------------------------------------------------------//
 
 .white {
-  color: #fff;
+  color: $base--colorWhite;
+}
+
+.black {
+  color: #000;
 }
 
 .verde {

@@ -4,7 +4,7 @@
 
       <div class="section-strip inner-hero work-item">
         <div class="container">
-          <div class="intro text-align-center white">
+          <div class="intro text-align-center black">
             <h1>De<span class="ligature">e</span>pness</h1>
             <div class="subhead">
               RAMBLINGS FROM DEEP&nbsp;FILMS
@@ -15,6 +15,10 @@
       <div class="section-strip news--article-container inner-page-section">
         <div class="container">
           <article class="news--article hidden reveal" ng-repeat="post in posts|orderBy: post.date" when-visible="animateElementIn" when-not-visible="animateElementOut">
+            <div class="tape">
+              <img class="tape-left" src="/wp-content/themes/deep-2017/build/images/pages/tape_left.png" />
+              <img class="tape-right" src="/wp-content/themes/deep-2017/build/images/pages/tape_right.png" />
+            </div>
             <a href="{{site + '#/deepness/' + post.slug}}" class="deepness-img" ng-repeat="asset_url in post.acf.expertise_assets" style="background-image:url({{asset_url.image_asset}})">
             </a>
               <div class="library--featured-text">

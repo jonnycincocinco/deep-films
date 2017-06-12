@@ -94,6 +94,14 @@
   }
 }
 
+.cinch-med {
+  @include breakpoint(tablet) {
+    width: 71%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .cinch-less {
   @include breakpoint(tablet) {
     width: 75%;
@@ -102,6 +110,18 @@
   }
 }
 
+.cinch-more {
+  @include breakpoint(tablet) {
+    width: 48%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+.nowrap {
+  white-space: nowrap;
 }

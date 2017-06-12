@@ -107,7 +107,7 @@ var app;
             _cache.bodyEl = $('body');
             _cache.mobileMenuToggle = $('.desktop-nav--mobile-toggle');
             _cache.mobileNav = $('.mobile-nav');
-            _cache.mobileNavLinks = $('.mobile-nav--main li > a');
+            _cache.mobileNavLinks = $('.mobile-nav--main li');
             _cache.logoMain = $('.desktop-nav--logo');
             _cache.header = $('header');
         },
@@ -206,7 +206,7 @@ var app;
                 _cache.mobileMenuToggle.removeClass('open');
                 _cache.mobileNav.removeClass('open');
                 _cache.header.removeClass('mobile-open');
-            }, 400);
+            }, 50);
 
         };
 

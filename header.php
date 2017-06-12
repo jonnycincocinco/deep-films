@@ -61,19 +61,7 @@
     <div class="container">
       <div class="grid">
         <div class="grid__item">
-          <a class="desktop-nav--mobile-toggle" title="Toggle Menu" href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
-          <a ui-sref="home-inner" class="desktop-nav--logo" title="<?php echo bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a>
-          <ul class="desktop-nav--main">
-            <li class=""><a ui-sref="work" ng-class="{active: $state.current.activetab == 'work' || $state.current.activetab == 'demos' || $state.current.activetab == 'branded-content' || $state.current.activetab == 'corporate'}">Work</a></li>
-            <li><a ui-sref="about" ng-class="{active: $state.current.activetab == 'about'}">About</a></li>
-            <li><a ui-sref="deepness" ng-class="{active: $state.current.activetab == 'deepness'}">Deepness</a></li>
-            <li><a ui-sref="contact" ng-class="{active: $state.current.activetab == 'contact'}">Contact</a></li>
-          </ul>
+          <a ui-sref="home" class="desktop-nav--logo" title="<?php echo bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a>
         </div>
       </div>
     </div>
@@ -109,10 +97,19 @@
 </header>
 
 <nav class="mobile-nav">
-    <ul class="mobile-nav--main">
-      <li class=""><a ui-sref="work" ng-class="{active: $state.current.activetab == 'work' || $state.current.activetab == 'demos' || $state.current.activetab == 'branded-content' || $state.current.activetab == 'corporate'}">Work</a></li>
-      <li><a ui-sref="about" ng-class="{active: $state.current.activetab == 'about'}">About</a></li>
-      <li><a ui-sref="deepness" ng-class="{active: $state.current.activetab == 'deepness'}">Deepness</a></li>
-      <li><a ui-sref="contact" ng-class="{active: $state.current.activetab == 'contact'}">Contact</a></li>
+  <a class="desktop-nav--mobile-toggle" title="Toggle Menu" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  <ul class="mobile-nav--main">
+      <li ui-sref="home"><a ng-class="{active: $state.current.activetab == 'home'}">Home</a></li>
+      <li ui-sref="about"><a ng-class="{active: $state.current.activetab == 'about'}">About</a></li>
+      <li ui-sref="work"><a ng-class="{active: $state.current.activetab == 'work' || $state.current.activetab == 'demos' || $state.current.activetab == 'branded-content' || $state.current.activetab == 'corporate'}">The Goods</a></li>
+      <li ui-sref="what-we-do"><a ng-class="{active: $state.current.activetab == 'what-we-do'}">What we do</a></li>
+      <li ui-sref="deepness"><a ng-class="{active: $state.current.activetab == 'deepness'}">Deepness</a></li>
+      <li ui-sref="contact"><a ng-class="{active: $state.current.activetab == 'contact'}">Contact</a></li>
+      <li></li>
     </ul>
 </nav>

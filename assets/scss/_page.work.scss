@@ -1,4 +1,19 @@
-//  ## SERVICES  ----------------------------------------------------------//
+//  ## WORK  ----------------------------------------------------------//
+
+.work {
+  .page-ui-view--container {
+    background-size: contain;
+    background-repeat-x: repeat;
+    background-position: 0;
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/work_bg.jpg');
+  }
+  .work--container {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/work_header_bg.jpg');
+  }
+}
 
 .work--container {
   .inner-hero {
@@ -132,6 +147,9 @@
   }
 
   .work-item {
+  &.inner-page-section {
+    padding-top: calculateRem(160px);
+  }
     .work--featured-image {
       display: inline-block;
       width: 100%;

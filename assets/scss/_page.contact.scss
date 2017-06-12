@@ -1,5 +1,15 @@
 //  ## CONTACT  ----------------------------------------------------------//
 
+.contact {
+  .page-ui-view--container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-image: url('/wp-content/themes/deep-2017/build/images/pages/contact_bg.jpg');
+    min-height: 100vh;
+  }
+}
+
 .contact--map-container {
     @include span-columns(12 of 12);
     @include breakpoint(desktop) {
