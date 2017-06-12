@@ -25,8 +25,9 @@
   }
   .what-we-do__three-col {
     @include span-columns(12 of 12);
-    @include breakpoint(tablet)
-    @include span-columns(4 of 12);
+    @include breakpoint(tablet) {
+      @include span-columns(4 of 12);
+    }
     p {
       margin-bottom: 0;
     }

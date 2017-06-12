@@ -6,12 +6,16 @@
         <div class="container">
             <div class="grid" ng-repeat="asset_url in post.acf.expertise_assets">
                 <div class="text-align-center anim-in-out anim-slide-below-fade" data-anim-speed="900">
-                  <h1 class="cinch" ng-bind-html="post.title.rendered | to_trusted"></h1>
+                  <h1 class="cinch black" ng-bind-html="post.title.rendered | to_trusted"></h1>
                   <div class="library--featured-text">
                     <div class="library--author">
                     <div class="work-item-date-month">{{post.acf.date[0]}}</div>
                     <div class="work-item-date-day">{{post.acf.date[1]}}</div>
                   </div>
+                  </div>
+                  <div class="tape">
+                    <img class="tape-left" src="/wp-content/themes/deep-2017/build/images/pages/tape_left.png" />
+                    <img class="tape-right" src="/wp-content/themes/deep-2017/build/images/pages/tape_right.png" />
                   </div>
                   <picture picturefill ng-if="asset_url.image_asset">
                       <img ng-srcset="{{asset_url.image_asset | to_trustedURL}}" alt="{{post.title.rendered | to_trusted}}" class="scroll-element"  imageonload="contentLoaded()" />

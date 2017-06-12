@@ -24,7 +24,7 @@ return {
 };
 })
 
-.controller('workView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsByTypeAndSlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsByTypeAndSlug, $sce, $timeout, Socialshare){
+.controller('whatWeDoView',['getElement', '$window', '$scope', '$rootScope', '$state', '$location', '$stateParams', 'PostsByTypeAndSlug', '$sce', '$timeout', 'Socialshare', function (getElement, $window, $scope, $rootScope, $state, $location, $stateParams, PostsByTypeAndSlug, $sce, $timeout, Socialshare){
     'use strict';
 
     $scope.loadedContent = 0;
@@ -49,23 +49,6 @@ return {
 
   $rootScope.bodylayout = 'not-work inner-page';
 
-      if ($state.current.activetab == 'demos') {
-          $rootScope.bodylayout = 'work inner-page demos';
-      }
-      if ($state.current.activetab == 'corporate') {
-          $rootScope.bodylayout = 'work inner-page corporate';
-      }
-      if ($state.current.activetab == 'branded-content') {
-          $rootScope.bodylayout = 'work inner-page branded-content';
-      }
-
-    $('.filter-list').click(function(){
-      $('.dropdown-inner').addClass('closed');
-    });
-
-    $('.toggle').hover(function(){
-      $('.dropdown-inner').removeClass('closed');
-    });
 
     $rootScope.toggleHiddenNav = function(){
       $rootScope.showMenu = !$rootScope.showMenu;

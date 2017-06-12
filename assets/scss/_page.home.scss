@@ -120,10 +120,13 @@ h2 {
     &.subhead-bottom {
       position: relative;
       .home & {
-        margin-top: calculateRem(-60px);
-          @include breakpoint(tablet) {
+        color: #fff;
+        margin: calculateRem(-150px) calculateRem(50px) 0 calculateRem(50px);
+        @include breakpoint(tablet) {
+          margin-top: calculateRem(-60px);
           @include font-size(103);
           @include line-height(130);
+          width: auto;
         }
         &:before,
         &:after {
@@ -135,11 +138,17 @@ h2 {
           left: 0;
         }
         &:before {
-          top: 0;
+          top: -5px;
+          @include breakpoint(tablet) {
+            top: 0;
+          }
         }
         &:after {
-          bottom: 13px;
+          bottom: 6px;
           top: auto;
+          @include breakpoint(tablet) {
+            bottom: 13px;
+          }
         }
       }
     }
