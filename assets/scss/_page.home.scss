@@ -19,6 +19,11 @@ body  {
       height: 84vh;
     }
   }
+  .vid__title {
+     @include breakpoint(tablet) {
+       display: none !important;
+     }
+  }
   .video-background {
     position: absolute;
     top: 50%;
@@ -29,7 +34,7 @@ body  {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background: url('https://i.vimeocdn.com/video/617608264.jpg?mw=1920&mh=1080&q=70') no-repeat;
+    background: url('https://i.vimeocdn.com/video/639796971.jpg?mw=1920&mh=1080&q=70') no-repeat;
     background-size: cover;
     transition: 1s opacity;
     video {
@@ -44,12 +49,20 @@ body  {
        height: auto;
        z-index: -100;
        transform: translateX(-50%) translateY(-50%);
+       &.video__desktop {
+         display: none;
+          @include breakpoint(tablet) {
+            display: flex;
+          }
+        }
+         &.video__mobile {
+           @include breakpoint(tablet) {
+           display: none;
+         }
+       }
       }
     }
-    @include breakpoint(tablet) {
-    }
-    @include breakpoint(desktop) {
-    }
+
     .img-slide {
       position: relative;
       top: 0;
@@ -177,7 +190,7 @@ h2 {
   left: 0;
   margin: 0;
   width: 100%;
-  padding: 30px 20px 30px;
+  padding: 30px 20px 5px;
   background: $color--deeperBlue;
   z-index: 11;
   transition: all 200ms linear;
@@ -187,7 +200,8 @@ h2 {
   background-image: url('/wp-content/themes/deep-2017/build/images/pages/home-bottom-bar.jpg');
   .home-bottom-bar__text {
     color: #000;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: auto;
     @include breakpoint(cinema) {
       width: 60%;

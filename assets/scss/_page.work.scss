@@ -247,4 +247,9 @@
     }
   }
 
+  .bg-explain {
+    @include font-size(20);
+    @include line-height(32);
+  }
+
 // search

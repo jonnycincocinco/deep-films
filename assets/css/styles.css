@@ -2181,6 +2181,10 @@ body.home, body.home-inner {
     .page-home--hero .slide-wrapper {
       height: 84vh; } }
 
+@media only screen and (min-width: 768px) {
+  .page-home--hero .vid__title {
+    display: none !important; } }
+
 .page-home--hero .video-background {
   position: absolute;
   top: 50%;
@@ -2191,7 +2195,7 @@ body.home, body.home-inner {
   height: auto;
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
-  background: url("https://i.vimeocdn.com/video/617608264.jpg?mw=1920&mh=1080&q=70") no-repeat;
+  background: url("https://i.vimeocdn.com/video/639796971.jpg?mw=1920&mh=1080&q=70") no-repeat;
   background-size: cover;
   transition: 1s opacity; }
   .page-home--hero .video-background video {
@@ -2204,6 +2208,14 @@ body.home, body.home-inner {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%); }
+    .page-home--hero .video-background video.video__desktop {
+      display: none; }
+      @media only screen and (min-width: 768px) {
+        .page-home--hero .video-background video.video__desktop {
+          display: flex; } }
+    @media only screen and (min-width: 768px) {
+      .page-home--hero .video-background video.video__mobile {
+        display: none; } }
 
 .page-home--hero .img-slide {
   position: relative;
@@ -2324,7 +2336,7 @@ h2.subhead-middle {
   left: 0;
   margin: 0;
   width: 100%;
-  padding: 30px 20px 30px;
+  padding: 30px 20px 5px;
   background: #100c3c;
   z-index: 11;
   transition: all 200ms linear;
@@ -2334,7 +2346,8 @@ h2.subhead-middle {
   background-image: url("/wp-content/themes/deep-2017/build/images/pages/home-bottom-bar.jpg"); }
   .home-bottom-bar .home-bottom-bar__text {
     color: #000;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: auto; }
     @media only screen and (min-width: 1300px) {
       .home-bottom-bar .home-bottom-bar__text {
@@ -2642,6 +2655,12 @@ h2.subhead-middle {
     opacity: 1;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; }
+
+.bg-explain {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 32px;
+  line-height: 2rem; }
 
 .deepness .ligature {
   letter-spacing: 7px; }
