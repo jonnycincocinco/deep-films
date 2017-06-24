@@ -28,8 +28,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="wp-content/themes/earthly-2016/build/images/icons/Eapple-touch-icon-180x180.png">
 
   <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-  <script type="text/javascript" src="https://easy.myfonts.net/v2/js?sid=155585(font-family=Mrs+Eaves+Roman)&sid=155586(font-family=Mrs+Eaves+Italic)&sid=155587(font-family=Mrs+Eaves+Bold)&key=kyHM6e5vNd"></script>
   <script src="//easy.myfonts.net/v2/js?sid=10140(font-family=Univers+65+Bold)&sid=218049(font-family=Univers+Pro+59+UltraCondensed)&sid=218105(font-family=Univers+Pro+45+Light)&sid=218106(font-family=Univers+Pro+55+Roman)&key=gc6tWYGw8A"></script>
+  <script src="https://use.typekit.net/sdj4hib.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <style>
   #mfPreviewBar {
     opacity: 0;

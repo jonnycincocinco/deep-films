@@ -1,8 +1,9 @@
 //  ## TYPOGRAPHY  -----------------------------------------------------------------//
 
 %circular-headline {
-  font-family: 'Mrs Eaves Italic', serif;
+  font-family: 'adobe-caslon-pro', serif;
   font-weight: 100;
+  font-style: italic;
 //  font-family: "Rising-Sun", helvetica, arial, sans-serif;
 //  font-weight: bolder;
 //  text-transform: uppercase;
@@ -10,7 +11,7 @@
 }
 
 %circular {
-  font-family: "Mrs Eaves Roman", georgia, arial, sans-serif;
+  font-family: "adobe-caslon-pro", georgia, arial, sans-serif;
   font-weight: normal;
 }
 
@@ -30,7 +31,7 @@
 }
 
 %circular-medium {
-  font-family: "Mrs Eaves Roman", helvetica, arial, sans-serif;
+  font-family: "adobe-caslon-pro", helvetica, arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -52,14 +53,14 @@ html {
 
 h1 {
   @extend %circular-headline;
-  @include font-size(100);
-  @include line-height(70);
+  @include font-size(90);
+  @include line-height(80);
   margin: 0 0 calculateRem(10px) 0;
   font-weight: 300;
   letter-spacing: 0.02rem;
 //  color: $color--lightBlue;
   @include breakpoint(tablet) {
-    @include font-size(110);
+    @include font-size(100);
     @include line-height(90);
   }
 }
