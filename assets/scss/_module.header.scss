@@ -364,20 +364,25 @@ button.cta {
   width: 100%;
   padding: 18px 10px;
   position: relative;
-  top: 200px;
+  top: 150px;
   transition: all 150ms ease-in-out;
   overflow: hidden;
   @include font-size(14);
   @extend %circular-univers;
   z-index: 2001;
+  @include breakpoint(tablet) {
+    top: 200px;
+  }
   &:hover {
     overflow: visible;
   }
   .shorter & {
-      @include breakpoint(desktop) {
-        -webkit-transform: translate3d(0,-115px,0);
-        transform: translate3d(0,-115px,0);
-        -webkit-transition: -webkit-transform .35s;
+//      @include breakpoint(desktop) {
+      //  -webkit-transform: translate3d(0,-115px,0);
+      //  transform: translate3d(0,-115px,0);
+      //  -webkit-transition: -webkit-transform .35s;
+      position: fixed;
+      left: 0;
         transition: transform .35s;
         padding: 0 10px;
         top: 20px;
@@ -396,7 +401,7 @@ button.cta {
           display: none;
         }
       }
-    }
+//    }
   }
   .work & {
     display: inline-block;

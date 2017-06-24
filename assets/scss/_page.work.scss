@@ -17,6 +17,8 @@
 
 .work--container {
   .inner-hero {
+    padding-top: calculateRem(120px);
+
     &.bg-strip {
       padding-top: calculateRem(80px);
       padding-bottom: calculateRem(80px);
