@@ -1338,7 +1338,7 @@ button.cta.desktop-nav--cta {
   width: 100%;
   padding: 18px 10px;
   position: relative;
-  top: 150px;
+  top: 240px;
   transition: all 150ms ease-in-out;
   overflow: hidden;
   font-size: 14px;
@@ -1445,6 +1445,13 @@ button.cta.desktop-nav--cta {
         transition-delay: .06s; }
       .categorybar .filter-list li:nth-child(4n) a {
         transition-delay: .08s; }
+
+@media only screen and (max-width: 768px) {
+  .shorter .categorybar-dropdown {
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
+    position: relative;
+    z-index: 99999; } }
 
 .site-footer {
   padding: 2.5rem;

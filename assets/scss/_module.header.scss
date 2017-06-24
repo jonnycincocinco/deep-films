@@ -364,7 +364,7 @@ button.cta {
   width: 100%;
   padding: 18px 10px;
   position: relative;
-  top: 150px;
+  top: 240px;
   transition: all 150ms ease-in-out;
   overflow: hidden;
   @include font-size(14);
@@ -519,6 +519,17 @@ button.cta {
             transition-delay: .08s;
           }
         }
+    }
+  }
+}
+
+.categorybar-dropdown {
+  .shorter & {
+    @include breakpoint(mobileOnly) {
+      background: rgba(0,0,0,.5);
+      padding-top: 20px;
+      position: relative;
+      z-index: 99999;
     }
   }
 }
