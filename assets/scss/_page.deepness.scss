@@ -139,13 +139,36 @@
   }
   .tape-left {
     position: absolute;
-    left: -48px;
-    top: -90px;
+    left: -34px;
+    top: -66px;
+    width: 38%;
+    @include breakpoint(tablet) {
+      left: -20px;
+      top: -63px;
+      width: 20%;
+      @include breakpoint(desktop) {
+        left: -48px;
+        top: -90px;
+        width: auto;
+      }
+    }
   }
   .tape-right {
     position: absolute;
-    right: -11px;
-    top: -83px;
+    right: -43px;
+    top: -66px;
+    width: 40%;
+    @include breakpoint(tablet) {
+      right: -11px;
+      top: -54px;
+      width: 20%;
+      @include breakpoint(desktop) {
+        top: -83px;
+          width: auto;
+      }
+    }
+
+
     .deepness-item & {
       right: -50px;
       top: -93px;

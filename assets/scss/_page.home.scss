@@ -14,7 +14,10 @@ body  {
   }
   .slide-wrapper {
     position: relative;
-    height: 90vh;
+    height: 100vh;
+    @include breakpoint(tablet) {
+      height: 90vh;
+    }
     @include breakpoint(cinema) {
       height: 84vh;
     }
@@ -37,6 +40,10 @@ body  {
     background: url('https://i.vimeocdn.com/video/639796971.jpg?mw=1920&mh=1080&q=70') no-repeat;
     background-size: cover;
     transition: 1s opacity;
+    *::-webkit-media-controls-start-playback-button {
+       display: none!important;
+       -webkit-appearance: none;
+     }
     video {
 //      min-width: 100vw;
 //      min-height: 100vh;
@@ -60,6 +67,7 @@ body  {
            display: none;
          }
        }
+
       }
     }
 
@@ -134,7 +142,8 @@ h2 {
       position: relative;
       .home & {
         color: #fff;
-        margin: calculateRem(-150px) calculateRem(50px) 0 calculateRem(50px);
+        margin: 0 calculateRem(50px) 0 calculateRem(50px);
+        @include font-size(80);
         @include breakpoint(tablet) {
           margin-top: calculateRem(-60px);
           @include font-size(103);
@@ -185,6 +194,7 @@ h2 {
 
 //social links
 .home-bottom-bar {
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -207,8 +217,8 @@ h2 {
       width: 60%;
     }
   }
-  &.active {
-  //  opacity: 1;
+  @include breakpoint(tablet) {
+    display: block;
   }
 }
 

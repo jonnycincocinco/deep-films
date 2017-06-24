@@ -68,9 +68,13 @@
 
       .title-subhead {
         display: block;
-        margin-bottom: -70px;
         margin-top: -12px;
+        margin-bottom: -40px;
         @include font-size(24);
+        @include line-height(32);
+        @include breakpoint(tablet) {
+          margin-bottom: -70px;
+        }
       }
 
       .icon-text-col__icon {
@@ -93,12 +97,14 @@
     position: relative;
     transition: all 200ms linear;
     display: inline-block;
-    @include breakpoint(cinema){
-    }
+
     img {
-    //  width: 100%;
+      width: 100%;
     //  height: 100%;
       transition: all 200ms linear;
+      @include breakpoint(tablet){
+        width: auto;
+      }
     }
   }
 }

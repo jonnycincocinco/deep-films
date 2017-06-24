@@ -2,12 +2,15 @@
 
 header {
     @include fill-parent();
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     min-width: $min-width;
     z-index: 1000;
     color: $base--colorWhite;
+    @include breakpoint(tablet) {
+//    position: fixed;
+    }
 }
 
 .desktop-nav {
@@ -258,6 +261,9 @@ button.cta {
       right: 0;
       @include transition(right 0.3s);
     }
+    .mobile-nav--main {
+      width: 100vw;
+    }
   }
 
 }
@@ -267,11 +273,12 @@ button.cta {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 0;
   text-align: left;
   padding-top: 70px;
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
   background: #0e76bc;
   @include breakpoint(desktop) {
     width: 40vw;

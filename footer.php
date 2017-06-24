@@ -20,7 +20,7 @@
 					<li><a class="site-footer-list__link" ui-sref="contact" ng-class="{active: $state.current.activetab == 'faqs'}">Contact</a></li>
 				</ul>
 			</div>
-			<div class="grid__item">
+			<div class="grid__item grid__item--address">
 				<ul class="site-footer-list">
 						<li><span class="site-footer-list__link">213B Second St,</span></li>
 						<li><span class="site-footer-list__link">Sausalito, CA</span></li>

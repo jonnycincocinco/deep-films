@@ -1056,7 +1056,7 @@ a,
 
 header {
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   min-width: 320px;
@@ -1253,17 +1253,20 @@ button.cta.desktop-nav--cta {
       -webkit-transition: right 0.3s;
       -moz-transition: right 0.3s;
       transition: right 0.3s; }
+    .mobile-nav.open .mobile-nav--main {
+      width: 100vw; }
 
 .mobile-nav--main {
   position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 0;
   text-align: left;
   padding-top: 70px;
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
   background: #0e76bc; }
   @media only screen and (min-width: 1024px) {
     .mobile-nav--main {
@@ -1459,7 +1462,8 @@ button.cta.desktop-nav--cta {
     width: 100%; }
     .site-footer .grid__item.grid__item--logo {
       padding: 0;
-      margin-right: 5rem; }
+      margin-right: 5rem;
+      margin-bottom: 0.9375rem; }
     .site-footer .grid__item:last-child {
       margin-right: 0; }
     @media only screen and (min-width: 768px) {
@@ -1487,6 +1491,14 @@ button.cta.desktop-nav--cta {
         width: 50%; }
         .site-footer .grid__item:last-child {
           margin-right: 0; } }
+    @media only screen and (max-width: 768px) {
+      .site-footer .grid__item.grid__item--address {
+        float: left;
+        display: block;
+        margin-right: 0%;
+        width: 100%; }
+        .site-footer .grid__item.grid__item--address:last-child {
+          margin-right: 0; } }
     @media only screen and (min-width: 768px) {
       .site-footer .grid__item.legal {
         float: left;
@@ -1512,12 +1524,18 @@ button.cta.desktop-nav--cta {
       margin-right: 0%;
       width: 100%;
       position: absolute;
-      right: 60px;
+      right: 0;
       bottom: 0; }
       .site-footer .grid__item.copyright:last-child {
         margin-right: 0; }
+      @media only screen and (min-width: 768px) {
+        .site-footer .grid__item.copyright {
+          right: 60px; } }
       .site-footer .grid__item.copyright p {
-        text-align: right; }
+        text-align: center; }
+        @media only screen and (min-width: 768px) {
+          .site-footer .grid__item.copyright p {
+            text-align: right; } }
   .site-footer .site-footer-list {
     list-style: none;
     margin: 0 0 1.25rem;
@@ -1530,11 +1548,22 @@ button.cta.desktop-nav--cta {
     color: #fff; }
   .site-footer .site-footer-list--social {
     position: absolute;
-    right: 3.75rem; }
+    left: 0;
+    right: 0;
+    text-align: center; }
+    @media only screen and (min-width: 768px) {
+      .site-footer .site-footer-list--social {
+        right: 3.75rem;
+        left: auto;
+        text-align: right; } }
   .site-footer .site-footer-list--social li {
-    display: block;
+    display: inline-block;
+    margin-top: 1.25rem;
     margin-bottom: 0.625rem;
     cursor: pointer; }
+    @media only screen and (min-width: 768px) {
+      .site-footer .site-footer-list--social li {
+        display: block; } }
   .site-footer .site-footer-list__icon {
     background-size: cover;
     color: #c8cfdd;
@@ -2176,7 +2205,10 @@ body.home, body.home-inner {
 
 .page-home--hero .slide-wrapper {
   position: relative;
-  height: 90vh; }
+  height: 100vh; }
+  @media only screen and (min-width: 768px) {
+    .page-home--hero .slide-wrapper {
+      height: 90vh; } }
   @media only screen and (min-width: 1300px) {
     .page-home--hero .slide-wrapper {
       height: 84vh; } }
@@ -2198,6 +2230,9 @@ body.home, body.home-inner {
   background: url("https://i.vimeocdn.com/video/639796971.jpg?mw=1920&mh=1080&q=70") no-repeat;
   background-size: cover;
   transition: 1s opacity; }
+  .page-home--hero .video-background *::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none; }
   .page-home--hero .video-background video {
     position: fixed;
     top: 50%;
@@ -2286,7 +2321,9 @@ h2.subhead {
     position: relative; }
     .home h2.subhead.subhead-bottom {
       color: #fff;
-      margin: -9.375rem 3.125rem 0 3.125rem; }
+      margin: 0 3.125rem 0 3.125rem;
+      font-size: 80px;
+      font-size: 5rem; }
       @media only screen and (min-width: 768px) {
         .home h2.subhead.subhead-bottom {
           margin-top: -3.75rem;
@@ -2331,6 +2368,7 @@ h2.subhead-middle {
   display: none; }
 
 .home-bottom-bar {
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -2352,6 +2390,9 @@ h2.subhead-middle {
     @media only screen and (min-width: 1300px) {
       .home-bottom-bar .home-bottom-bar__text {
         width: 60%; } }
+  @media only screen and (min-width: 768px) {
+    .home-bottom-bar {
+      display: block; } }
 
 .full-link {
   height: 100%;
@@ -2410,10 +2451,15 @@ h2.subhead-middle {
         margin-top: 0; } }
   .about-team .icon-text-col__item .grid__item .title-subhead {
     display: block;
-    margin-bottom: -70px;
     margin-top: -12px;
+    margin-bottom: -40px;
     font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    line-height: 32px;
+    line-height: 2rem; }
+    @media only screen and (min-width: 768px) {
+      .about-team .icon-text-col__item .grid__item .title-subhead {
+        margin-bottom: -70px; } }
   .about-team .icon-text-col__item .grid__item .icon-text-col__icon {
     text-align: center;
     margin-bottom: 10px; }
@@ -2441,7 +2487,11 @@ h2.subhead-middle {
   transition: all 200ms linear;
   display: inline-block; }
   .about-team .picture-wrapper img {
+    width: 100%;
     transition: all 200ms linear; }
+    @media only screen and (min-width: 768px) {
+      .about-team .picture-wrapper img {
+        width: auto; } }
 
 .about .opening .icon-text-col__text {
   padding-left: 0; }
@@ -2790,12 +2840,33 @@ h2.subhead-middle {
     top: 50px; }
   .tape .tape-left {
     position: absolute;
-    left: -48px;
-    top: -90px; }
+    left: -34px;
+    top: -66px;
+    width: 38%; }
+    @media only screen and (min-width: 768px) {
+      .tape .tape-left {
+        left: -20px;
+        top: -63px;
+        width: 20%; } }
+  @media only screen and (min-width: 768px) and (min-width: 1024px) {
+    .tape .tape-left {
+      left: -48px;
+      top: -90px;
+      width: auto; } }
   .tape .tape-right {
     position: absolute;
-    right: -11px;
-    top: -83px; }
+    right: -43px;
+    top: -66px;
+    width: 40%; }
+    @media only screen and (min-width: 768px) {
+      .tape .tape-right {
+        right: -11px;
+        top: -54px;
+        width: 20%; } }
+  @media only screen and (min-width: 768px) and (min-width: 1024px) {
+    .tape .tape-right {
+      top: -83px;
+      width: auto; } }
     .deepness-item .tape .tape-right {
       right: -50px;
       top: -93px; }

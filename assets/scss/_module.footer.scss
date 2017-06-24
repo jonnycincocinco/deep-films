@@ -15,6 +15,7 @@
     &.grid__item--logo {
       padding: 0;
       margin-right: calculateRem(80px);
+      margin-bottom: calculateRem(15px);
     }
     display: inline-block;
     @include span-columns(12 of 12);
@@ -27,6 +28,11 @@
     }
     @include breakpoint(mobileOnly) {
       @include span-columns(6 of 12);
+    }
+    &.grid__item--address {
+      @include breakpoint(mobileOnly) {
+        @include span-columns(12 of 12);
+      }
     }
     &.legal {
       @include breakpoint(tablet) {
@@ -44,10 +50,16 @@
       @include line-height(20);
       @include span-columns(12 of 12);
       position: absolute;
-      right: 60px;
+      right: 0;
       bottom: 0;
+      @include breakpoint(tablet) {
+        right: 60px;
+      }
       p {
-        text-align: right;
+        text-align: center;
+        @include breakpoint(tablet) {
+          text-align: right;
+        }
       }
     }
   }
@@ -64,12 +76,25 @@
 
   .site-footer-list--social {
       position: absolute;
-      right: calculateRem(60px);
+      left: 0;
+      right: 0;
+      text-align: center;
+      @include breakpoint(tablet) {
+        right: calculateRem(60px);
+        left:auto;
+        text-align: right;
+      }
+
+
   }
   .site-footer-list--social li {
-    display: block;
+    display: inline-block;
+    margin-top: calculateRem(20px);
     margin-bottom: calculateRem(10px);
     cursor: pointer;
+    @include breakpoint(tablet) {
+      display: block;
+    }
   }
   .site-footer-list__icon {
     background-size: cover;
