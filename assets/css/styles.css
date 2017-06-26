@@ -419,15 +419,18 @@ html {
 
 .what-we-do--item h2, p, .desktop-nav--main, .categorybar, .site-footer, .about-team .icon-text-col__item .grid__item h2 {
   font-family: "Univers Pro 55 Roman", helvetica, arial, sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  font-style: normal; }
 
 .desktop-nav--main li a.active {
   font-family: "Univers 65 Bold", helvetica, arial, sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  font-style: normal; }
 
 h2.subhead, .category-subhead, .deepness .subhead {
   font-family: "Univers Pro 59 UltraCondensed", helvetica, arial, sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  font-style: normal; }
 
 html {
   font-size: 16px;

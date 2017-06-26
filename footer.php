@@ -29,9 +29,9 @@
 			</div>
 			<div class="grid__item">
 				<ul class="site-footer-list site-footer-list--social">
-				<li><a class="site-footer-list__icon site-footer-list__icon--instagram" href="https://www.instagram.com/deepfilmsrob/" target="_blank">Instagram</a></li>
-				<li><a class="site-footer-list__icon site-footer-list__icon--twitter" href="https://twitter.com/deepfilmsRob" target="_blank">Twitter</a></li>
-				<li><a class="site-footer-list__icon site-footer-list__icon--facebook" href="https://www.facebook.com/DeepFilms/" target="_blank">Facebook</a></li>
+				<li><a class="site-footer-list__icon site-footer-list__icon--instagram" href="https://www.instagram.com/deepfilmsrob/" target="_blank" title="Instagram"></a></li>
+				<li><a class="site-footer-list__icon site-footer-list__icon--twitter" href="https://twitter.com/deepfilmsRob" target="_blank" title="Twitter"></a></li>
+				<li><a class="site-footer-list__icon site-footer-list__icon--facebook" href="https://www.facebook.com/DeepFilms/" target="_blank" title="Facebook"></a></li>
 			</ul>
 			</div>
 
