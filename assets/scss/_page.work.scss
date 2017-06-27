@@ -177,8 +177,8 @@
       -webkit-box-pack: center;
       -webkit-justify-content: center;
       justify-content: center;
-      @include breakpoint(tablet){
-    //    width: 46%;
+      @include breakpoint(mobileOnly){
+          opacity: 1;
       }
       &:hover {
         color: #fff;

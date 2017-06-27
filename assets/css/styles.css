@@ -2663,6 +2663,9 @@ h2.subhead-middle {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center; }
+  @media only screen and (max-width: 768px) {
+    .work--container .work-item .work--featured-text {
+      opacity: 1; } }
   .work--container .work-item .work--featured-text:hover {
     color: #fff; }
 
